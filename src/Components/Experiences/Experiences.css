@@ -1,0 +1,151 @@
+.content-layout {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.details-column {
+  flex: 1 1 400px;
+}
+
+.gallery-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 480px;
+  max-height: 480px;
+  border: 2px solid var(--tertiary-color);
+  border-radius: 16px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  border-color: var(--tertiary-color);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  color: var(--primary-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1001;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 5%;
+}
+
+.next {
+  right: 5%;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .tabs {
+    gap: 10px;
+  }
+
+  .gallery-column {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 480px;
+    max-height: 480px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .tabs {
+    gap: 8px;
+  }
+
+  .gallery-column {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 480px;
+    max-height: 480px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .details-column {
+    width: 100%;
+  }
+}

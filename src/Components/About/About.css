@@ -1,0 +1,147 @@
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 20vh;
+    text-align: left;
+}
+
+.about-left {
+    flex: 1 1 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    max-width: 500px;
+    min-width: 300px;
+}
+
+.about-right {
+    flex: 1 1 500px;
+    padding: 1.5rem 2rem;
+    background-color: var(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-title {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    margin: 2rem 0 1rem 0;
+    color: var(--heading-color);
+}
+
+.about-right p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    margin-bottom: 1.2rem;
+}
+
+.about-content {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.about-extra {
+    font-style: italic;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.experience-list {
+    list-style: none;
+    padding-left: 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.experience-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    border-left: 4px solid var(--tertiary-color);
+    padding-left: 1rem;
+    text-align: left;
+}
+
+.experience-list span {
+    color: var(--text-color);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-title {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    .about-left {
+        margin-bottom: 0px;
+    }
+
+    .about-right {
+        padding: 1rem;
+    }
+
+    .about-right p,
+    .about-intro {
+        text-align: center;
+    }
+
+    .experience-list {
+        text-align: center;
+    }
+
+    .experience-list li {
+        text-align: center;
+        border-left: none;
+        border-top: 2px solid var(--tertiary-color);
+        padding-left: 0;
+        padding-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 0.9rem;
+        font-weight: 300;
+    }
+
+    .about-right p,
+    .about-intro {
+        font-size: 1rem;
+    }
+
+    .about-extra {
+        font-size: 1rem;
+    }
+
+    .experience-list {
+        font-size: 0.95rem;
+    }
+}

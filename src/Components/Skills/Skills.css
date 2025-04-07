@@ -1,0 +1,153 @@
+.skills-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--text-color);
+  font-weight: 700;
+  margin: 1rem;
+  text-transform: uppercase;
+}
+
+.skills-description {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 2rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.skills-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  justify-items: center;
+}
+
+.tech-card {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 180px;
+  min-height: 250px;
+}
+
+.tech-card:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.tech-logo {
+  width: 4rem;
+  height: 4rem;
+  margin: 1.5rem 0;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-logo:hover {
+  transform: scale(1.1);
+}
+
+.tech-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+  margin: 1rem;
+}
+
+.tech-description {
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0 1rem 1rem;
+}
+
+@media (max-width: 1280px) {
+  .skills-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .skills-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tech-card {
+    max-width: 140px;
+    min-height: 200px;
+  }
+
+  .tech-logo {
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem 0;
+  }
+
+  .tech-title {
+    font-size: 0.75rem;
+  }
+
+  .tech-description {
+    font-size: 0.75rem;
+  }
+
+  .skills-heading {
+    font-size: 1.3rem;
+  }
+
+  .skills-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .tech-card {
+    max-width: 120px;
+    min-height: 180px;
+  }
+
+  .tech-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .tech-title {
+    font-size: 0.75rem;
+  }
+
+  .skills-description {
+    font-size: 0.75rem;
+  }
+
+  .tech-description {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,111 @@
+
+footer {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 0;
+    align-content: center;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.363);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.logo-column img {
+    margin-bottom: 10px;
+}
+
+.footer-column p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+}
+
+.socials-column p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-socials a:hover {
+    color: var(--tertiary-color);
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    border-top: 1px solid var(--tertiary-color);
+    padding-top: 10px;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        min-width: 100%;
+        margin: 10px 0px;
+    }
+
+    .footer-column p {
+        font-size: 0.8rem;
+        line-height: 1.8;
+    }
+
+    .bracu-logo {
+        width: auto;
+        height: 60px;
+        margin: auto 20px;
+    }
+
+    .event-logo {
+        width: 150px;
+        height: auto;
+        margin: auto 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .address-column p {
+        font-size: 0.9rem;
+    }
+
+    .footer-socials a {
+        font-size: 2.2rem;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+}
