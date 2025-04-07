@@ -2,8 +2,10 @@ import React from 'react';
 import { skills } from '../../Resources/Skills.jsx';
 import SubHeader from '../Sub-Header/SubHeader.jsx';
 import './Skills.css';
+import PropTypes from "prop-types";
 
-const Skills = () => {
+const Skills = ({ navigate }) => {
+
   return (
     <div>
       <SubHeader title="Skills Learned" />
@@ -28,13 +30,17 @@ const Skills = () => {
         <div className='skills-heading'>
           <h2 className="skills-heading">Want to see these in action?</h2>
           <p className="tech-title">Explore the projects I've built using these technologies.</p>
-          <button className="btn">
+          <button className="btn" onClick={() => navigate("projects")}>
             View Projects
           </button>
         </div>
       </div>
     </div>
   );
+};
+
+Skills.propTypes = {
+    navigate: PropTypes.func.isRequired,
 };
 
 export default Skills;

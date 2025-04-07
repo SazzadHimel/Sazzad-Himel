@@ -36,10 +36,10 @@ function Contact() {
             <img src={profileImg} alt="Profile" className="contact-image" />
             <h3 className="title">Get in Touch</h3>
             <p className="description">Feel free to reach out to me via email or send a message using the form.</p>
-            <p><span className="label">Name:</span> Sazzad Hossen Himel</p>
-            <p><span className="label">Address:</span> Dhaka-1217, Bangladesh</p>
-            <p><span className="label">Phone:</span> +8801626-415005</p>
-            <p><span className="label">Email:</span> <a className="link" href="mailto:himel.s.hossain@gmail.com">himel.s.hossain@gmail.com</a></p>
+            <p className="description"><span className="label">Name:</span> Sazzad Hossen Himel</p>
+            <p className="description"><span className="label">Address:</span> Dhaka-1217, Bangladesh</p>
+            <p className="description"><span className="label">Phone:</span> +8801626-415005</p>
+            <p className="description"><span className="label">Email:</span> <a className="link" href="mailto:himel.s.hossain@gmail.com">himel.s.hossain@gmail.com</a></p>
           </div>
           <div className="form-wrapper">
             <form onSubmit={handleSubmit} className="contact-form">

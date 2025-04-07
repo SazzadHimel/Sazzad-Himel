@@ -44,7 +44,7 @@ const App = () => {
       case "about":
         return <About />;
       case "skills":
-        return <Skills />;
+        return <Skills navigate={changePage}/>;
       case "experiences":
         return <Experiences />;
       case "projects":

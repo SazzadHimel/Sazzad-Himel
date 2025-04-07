@@ -22,7 +22,7 @@
     font-weight: 700;
     margin: 12%;
     padding-top: 3%;
-    color: var(--primary-color);
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {

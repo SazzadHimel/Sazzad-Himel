@@ -7,14 +7,15 @@ import PropTypes from "prop-types";
 const Home = ({ navigate }) => {
 return (
     <div><Header navigate={navigate} />
+        <h2 className="about-me-title">About Me</h2>
         <div className="container space">
             <div className="about">
                 <div className="about-left">
                     <Lottie animationData={Animation} />
                 </div>
                 <div className="about-right">
-                    <h2 className="about-title">
-                    Full-Stack Developer | MERN | Data Science | Laravel | Python | JavaScript
+                    <h2 class="about-title">
+                        Full-Stack Developer <span>|</span> MERN <span>|</span> Data Science <span>|</span> Laravel <span>|</span> Python <span>|</span> JavaScript
                     </h2>
                     <p className="about-intro">Hello! I'm <strong>Sazzad Hossen</strong>.</p>
                     <p>
@@ -28,7 +29,7 @@ return (
             <div className='skills-heading'>
                 <h2 className="skills-heading">Want to see my works?</h2>
                 <p className="tech-title">Explore the projects I've built using some technologies.</p>
-                <button className="btn">
+                <button className="btn" onClick={() => navigate("projects")}>
                     View Projects
                 </button>
             </div>

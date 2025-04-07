@@ -1,11 +1,11 @@
-/* General Header Styling */
+
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     text-align: center;
     background-color: var(--primary-color);
 }
@@ -81,8 +81,8 @@
     }
 
     .header-image {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
         border: 3px solid var(--tertiary-color);
     }
 
@@ -109,8 +109,8 @@
     }
 
     .header-image {
-        width: 150px;
-        height: 150px;
+        width: 250px;
+        height: 250px;
     }
 
     .header-right h1 {

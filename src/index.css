@@ -8,10 +8,29 @@
 }
 
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #000000;
-  --tertiary-color: #083b7c;
-  --text-color: #242424;
+  --primary-color-light: #ffffff;
+  --primary-color-dark: #121212;
+  --secondary-color-light: #000000;
+  --secondary-color-dark: #ffffff;
+  --tertiary-color-light: #083b7c;
+  --tertiary-color-dark: #2231ff;
+  --text-color-light: #242424;
+  --text-color-dark: #e0e0e0;
+}
+
+
+[data-theme="light"] {
+  --primary-color: var(--primary-color-light);
+  --secondary-color: var(--secondary-color-light);
+  --tertiary-color: var(--tertiary-color-light);
+  --text-color: var(--text-color-light);
+}
+
+[data-theme="dark"] {
+  --primary-color: var(--primary-color-dark);
+  --secondary-color: var(--secondary-color-dark);
+  --tertiary-color: var(--tertiary-color-dark);
+  --text-color: var(--text-color-dark);
 }
 
 body {
@@ -32,17 +51,17 @@ p, h1, h2, h3, li {
 
 .btn {
   background: var(--tertiary-color);
-  color: var(--primary-color);
+  color: #ffffff;
   font-weight: 500;
   padding: 12px 25px;
   font-size: 18px;
-  border-radius: 15px;
+  border-radius: 12px;
   cursor: pointer;
   border: 0;
   outline: 0;
   margin: 10px;
   transition: background 0.3s, transform 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 8px var(--secondary-color);
 }
 
 .btn:hover {
@@ -83,7 +102,7 @@ p, h1, h2, h3, li {
 
   .btn {
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .space {
@@ -99,8 +118,8 @@ p, h1, h2, h3, li {
   }
 
   .btn {
-    padding: 8px 15px;
-    font-size: 14px;
+    padding: 10px 16px;
+    font-size: 16px;
   }
 
   .space {

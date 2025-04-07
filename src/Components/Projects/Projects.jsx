@@ -19,7 +19,7 @@ const Projects = () => {
 
   return (
     <div>
-      <SubHeader title="Projects" />
+      <SubHeader title="Projects Developed" />
       <div className="container space">
         <div className="tabs">
           {projects.map((project, index) => (

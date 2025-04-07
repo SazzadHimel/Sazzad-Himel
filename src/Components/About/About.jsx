@@ -9,9 +9,9 @@ const About = () => {
     <div>
       <SubHeader title="About Me" />
       <div className="container space">
-        <div className="about-title">
-          <h2>
-            Full-Stack Developer | MERN | Data Science | Laravel | Python | JavaScript
+        <div>
+          <h2 class="about-title">
+            Full-Stack Developer <span>|</span> MERN <span>|</span> Data Science <span>|</span> Laravel <span>|</span> Python <span>|</span> JavaScript
           </h2>
         </div>
         <div className="about">

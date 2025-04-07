@@ -1,0 +1,29 @@
+
+.about-me-title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--tertiary-color);
+    padding-bottom: 5px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+    .about-me-title {
+        font-size: 1.8rem;
+        width: 250px;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-me-title {
+        font-size: 1.8rem;
+        width: 250px;
+        margin-top: 50px;
+    }
+}

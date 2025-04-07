@@ -30,12 +30,20 @@
 }
 
 .about-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
-    color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
+    color: var(--secondary-color);
     margin-top: 1rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+.about-title span {
+    color: var(--tertiary-color);
+    margin: 0 0.5rem;
+    font-weight: bold;
 }
 
 .about-intro {
@@ -97,7 +105,7 @@
 
     .about-title {
         font-size: 1rem;
-        font-weight: 300;
+        font-weight: 500;
     }
 
     .about-left {
@@ -129,7 +137,7 @@
 @media (max-width: 480px) {
     .about-title {
         font-size: 0.9rem;
-        font-weight: 300;
+        font-weight: 500;
     }
 
     .about-right p,
