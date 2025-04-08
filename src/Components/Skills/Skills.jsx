@@ -12,7 +12,7 @@ const Skills = ({ navigate }) => {
       <div className="container space">
         <div>
           <p className="skills-description">
-            Below is a curated list of technologies and tools I’ve worked with, spanning frontend, backend, databases, APIs, data science, 
+            Bellow is a curated list of technologies and tools I’ve worked with, spanning frontend, backend, databases, APIs, data science, 
             and more. Each one has contributed to shaping my projects and development journey.
           </p>
         </div>

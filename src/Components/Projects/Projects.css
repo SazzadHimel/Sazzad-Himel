@@ -15,17 +15,27 @@
 
 .tab {
   padding: 10px 20px;
+  text-align: center;
+  flex: 1 1 200px;
+  max-width: 200px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.08);
   color: var(--secondary-color);
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
   border: 1px solid var(--tertiary-color);
+  box-shadow: 0px 4px 12px var(--shadow-color);
 }
 
 .tab.active {
   background-color: var(--tertiary-color);
-  color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--tertiary-color);
+}
+
+.tab:hover {
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
   border: 1px solid var(--tertiary-color);
 }
 
@@ -44,11 +54,16 @@
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+  cursor: pointer;
+  width: 100%;
+  max-width: 180px;
+  min-height: 140px;
 }
 
 .skill-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px var(--tertiary-color);
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 
 .skill-logo {
@@ -151,7 +166,7 @@
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px var(--shadow-color);
 }
 
 .close {
@@ -192,6 +207,7 @@
 
   .tabs {
     gap: 10px;
+    margin-bottom: 0px;
   }
 
   .gallery-column {

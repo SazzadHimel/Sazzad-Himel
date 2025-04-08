@@ -5,7 +5,7 @@ footer {
     color: var(--secondary-color);
     padding: 10px 0;
     align-content: center;
-    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.363);
+    box-shadow: 0px 4px 40px var(--shadow-color);
 }
 
 .footer {

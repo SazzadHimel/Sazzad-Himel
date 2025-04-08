@@ -40,7 +40,7 @@ const Navbar = ({ navigate }) => {
         </div>
         <div className="dark-mode-toggle-wrapper" onClick={toggleDarkMode}>
             <div className={`dark-mode-toggle ${darkMode ? "dark" : "light"}`}>
-                {darkMode ? "🌙" : "🌞"}
+                {darkMode ? "🌞" : "🌙"}
             </div>
         </div>
         <div className={`menu ${isMenuOpen ? "open" : ""}`}>

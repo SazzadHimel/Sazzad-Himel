@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
+    box-shadow: 0px 4px 12px var(--shadow-color);
 }
 
 .subheader-overlay {

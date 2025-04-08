@@ -13,9 +13,11 @@
   --secondary-color-light: #000000;
   --secondary-color-dark: #ffffff;
   --tertiary-color-light: #083b7c;
-  --tertiary-color-dark: #2231ff;
+  --tertiary-color-dark: #000a93;
   --text-color-light: #242424;
   --text-color-dark: #e0e0e0;
+  --shadow-color-light: rgba(0, 0, 0, 0.15);
+  --shadow-color-dark: rgba(255, 255, 255, 0.15);
 }
 
 
@@ -24,6 +26,7 @@
   --secondary-color: var(--secondary-color-light);
   --tertiary-color: var(--tertiary-color-light);
   --text-color: var(--text-color-light);
+  --shadow-color: var(--shadow-color-light);
 }
 
 [data-theme="dark"] {
@@ -31,6 +34,7 @@
   --secondary-color: var(--secondary-color-dark);
   --tertiary-color: var(--tertiary-color-dark);
   --text-color: var(--text-color-dark);
+  --shadow-color: var(--shadow-color-dark);
 }
 
 body {
