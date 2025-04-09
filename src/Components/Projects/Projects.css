@@ -17,7 +17,7 @@
   padding: 10px 20px;
   text-align: center;
   flex: 1 1 200px;
-  max-width: 200px;
+  max-width: 280px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.08);
   color: var(--secondary-color);
@@ -29,7 +29,7 @@
 
 .tab.active {
   background-color: var(--tertiary-color);
-  color: var(--secondary-color);
+  color: var(--primary-color);
   border: 1px solid var(--tertiary-color);
 }
 
@@ -99,6 +99,8 @@
 
 .description {
   font-size: 1rem;
+  flex: 2;
+  text-align: justify;
   margin-bottom: 20px;
   line-height: 1.6;
   color: var(--text-color);
@@ -210,6 +212,10 @@
     margin-bottom: 0px;
   }
 
+  .description {
+    font-size: 0.9rem;
+  }
+
   .gallery-column {
     grid-template-columns: repeat(2, 1fr);
     max-width: 480px;
@@ -239,6 +245,10 @@
 
   .tabs {
     gap: 8px;
+  }
+
+  .description {
+    font-size: 0.9rem;
   }
 
   .gallery-column {

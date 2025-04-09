@@ -19,13 +19,12 @@ const Footer = ({ navigate }) => {
                     Sazzad Hossen.
                 </div>
                 <div className="footer-column">
-                    <p>
-                        <strong>Full-Stack Developer • Tech Enthusiast • Data Scientist</strong>
+                    <p>Full-Stack Developer • Tech Enthusiast • Data Scientist
                         <br/> Dhaka 1217, Bangladesh
                     </p>
                 </div>
                 <div className="footer-column socials-column">
-                    <p><strong>Connect me:</strong></p>
+                    <p>Connect me:</p>
                     <div className="footer-socials">
                         <a href="https://www.facebook.com/himel.s.hossain" target="_blank" rel="noopener noreferrer">
                             <FaFacebook />

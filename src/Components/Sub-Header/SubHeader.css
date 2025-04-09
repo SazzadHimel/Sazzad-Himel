@@ -1,9 +1,9 @@
 .subheader {
     height: 350px;
     width: 100%;
-    background: linear-gradient(rgba(5, 2, 20, 0.386), rgba(6, 2, 22, 0.507)), url(../../assets/Sub-Header-1.jpg);
+    background: linear-gradient(rgba(5, 2, 20, 0.386), rgba(6, 2, 22, 0.507)), url(../../assets/Sub-Header.jpeg);
     background-size: cover;
-    background-position: top;
+    background-position: center;
     color: var(--primary-color);
     display: flex;
     align-items: center;
@@ -22,6 +22,7 @@
     font-size: 2.2rem;
     font-weight: 700;
     margin: 12%;
+    text-transform: uppercase;
     padding-top: 3%;
     color: #ffffff;
 }

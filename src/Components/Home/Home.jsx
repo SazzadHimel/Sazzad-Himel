@@ -15,7 +15,7 @@ return (
                 </div>
                 <div className="about-right">
                     <h2 class="about-title">
-                        Full-Stack Developer <span>|</span> MERN <span>|</span> Data Science <span>|</span> Laravel <span>|</span> Python <span>|</span> JavaScript
+                        Full-Stack Developer <span>|</span> MERN <span>|</span> JavaScript <span>|</span> Laravel <span>|</span> PHP <span>|</span> Data Science & Ai <span>|</span> Python
                     </h2>
                     <p className="about-intro">Hello! I'm <strong>Sazzad Hossen</strong>.</p>
                     <p>

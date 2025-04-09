@@ -24,7 +24,7 @@ const Experiences = () => {
 
   return (
     <div>
-      <SubHeader title="Professional Experiences" />
+      <SubHeader title="Experiences" />
       <div className="container space">
         <div className="tabs">
           {experience.map((exp, index) => (

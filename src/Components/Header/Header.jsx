@@ -18,9 +18,9 @@ const Header = ({ navigate }) => {
             </div>
             <div className="header-right">
                 <h1>
-                    <span className="highlight">Hi, I'm Sazzad Hossen</span>
+                    <span className="skills-heading">Hi, I'm Sazzad Hossen</span>
                 </h1>
-                <p>Full-Stack Developer • Tech Enthusiast • Data Scientist</p>
+                <p>Full-Stack Developer • Tech Enthusiast • Data Science & Ai</p>
                 <div className="social-icons">
                     <a href="https://www.facebook.com/himel.s.hossain" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
                     <a href="https://www.linkedin.com/in/sazzad-hossen-6205392a3" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>

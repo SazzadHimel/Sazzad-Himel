@@ -66,6 +66,10 @@
   cursor: pointer;
 }
 
+.close:hover {
+  color: var(--secondary-color);
+}
+
 .nav {
   position: absolute;
   top: 50%;
@@ -77,6 +81,10 @@
   user-select: none;
   z-index: 1001;
   transform: translateY(-50%);
+}
+
+.nav:hover {
+  color: var(--secondary-color);
 }
 
 .prev {

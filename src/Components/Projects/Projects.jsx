@@ -19,7 +19,7 @@ const Projects = () => {
 
   return (
     <div>
-      <SubHeader title="Projects Developed" />
+      <SubHeader title="Projects" />
       <div className="container space">
         <div className="tabs">
           {projects.map((project, index) => (
@@ -78,14 +78,14 @@ const Projects = () => {
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            <button className="nav prev" onClick={(e) => { e.stopPropagation(); showPrev(); }}>&#10094;</button>
+            <button className="nav prev" onClick={(e) => { e.stopPropagation(); showPrev(); }}>‹</button>
             <img
               className="modal-content"
               src={images[modalImageIndex]}
               alt={`Popup ${modalImageIndex + 1}`}
               onClick={(e) => e.stopPropagation()}
             />
-            <button className="nav next" onClick={(e) => { e.stopPropagation(); showNext(); }}>&#10095;</button>
+            <button className="nav next" onClick={(e) => { e.stopPropagation(); showNext(); }}>›</button>
           </div>
         )}
       </div>

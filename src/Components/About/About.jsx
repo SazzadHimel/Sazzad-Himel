@@ -11,7 +11,7 @@ const About = () => {
       <div className="container space">
         <div>
           <h2 class="about-title">
-            Full-Stack Developer <span>|</span> MERN <span>|</span> Data Science <span>|</span> Laravel <span>|</span> Python <span>|</span> JavaScript
+            Full-Stack Developer <span>|</span> MERN <span>|</span> JavaScript <span>|</span> Laravel <span>|</span> PHP <span>|</span> Data Science & Ai <span>|</span> Python
           </h2>
         </div>
         <div className="about">
