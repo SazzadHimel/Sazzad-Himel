@@ -39,9 +39,9 @@ export const experience = [
         link: "https://ibc.bracu.ac.bd/",
         images: [IBC1, IBC2, IBC3, IBC4, IBC5, IBC6],
         skills: [
+                { name: 'React', logo: React },
                 { name: 'HTML', logo: Html },
                 { name: 'CSS', logo: CSS },
-                { name: 'React', logo: React },
                 { name: 'JavaScript', logo: JavaScript },
             ]
     },
