@@ -4,6 +4,7 @@
   color: var(--text-color);
   font-weight: 700;
   margin: 1rem;
+  margin-top: 100px;
   text-transform: uppercase;
 }
 
