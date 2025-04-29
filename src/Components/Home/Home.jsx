@@ -17,7 +17,7 @@ return (
                     <h2 class="about-title">
                         Full-Stack Developer <span>|</span> MERN <span>|</span> JavaScript <span>|</span> Laravel <span>|</span> PHP <span>|</span> Data Science & Ai <span>|</span> Python
                     </h2>
-                    <p className="about-intro">Hello! I'm <strong>Sazzad Hossen</strong>.</p>
+                    <p className="about-intro">Hello! I'm <strong>Sazzad Himel</strong>.</p>
                     <p>
                     A dedicated undergraduate student in the Computer Science & Engineering department at <strong>BRAC University</strong>.
                     I am committed to excellence, and my versatile skills as a <strong>Web Developer</strong> enable me to craft innovative digital solutions.

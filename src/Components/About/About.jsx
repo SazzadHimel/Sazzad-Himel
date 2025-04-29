@@ -19,7 +19,7 @@ const About = () => {
             <Lottie animationData={Animation} />
           </div>
           <div className="about-right">
-            <p className="about-intro">Hello! I'm <strong>Sazzad Hossen</strong>.</p>
+            <p className="about-intro">Hello! I'm <strong>Sazzad Himel</strong>.</p>
             <p>
               A dedicated undergraduate student in the Computer Science & Engineering department at <strong>BRAC University</strong>.
               I am committed to excellence, and my versatile skills as a <strong>Web Developer</strong> enable me to craft innovative digital solutions.

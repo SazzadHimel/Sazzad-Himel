@@ -58,7 +58,7 @@ const App = () => {
 
   return (
     <div>
-      <Navbar navigate={changePage} />
+      <Navbar navigate={changePage} currentPage={currentPage} />
       <div className={`page-content ${isTransitioning ? "page-transition-exit" : "page-transition-enter"}`}>
         {renderPage()}
       </div>

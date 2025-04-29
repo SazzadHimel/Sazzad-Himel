@@ -98,6 +98,11 @@ p, h1, h2, h3, li {
   opacity: 0;
 }
 
+.hover-effect.active {
+  color: #0d4da1;
+  border-bottom: 2px solid #0d4da1;
+}
+
 @media (max-width: 768px) {
   .container {
     padding-left: 5%;

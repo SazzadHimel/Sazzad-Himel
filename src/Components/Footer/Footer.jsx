@@ -16,7 +16,7 @@ const Footer = ({ navigate }) => {
         <footer>
             <div className="footer">
                 <div className="brand-name footer-column" onClick={() => handleNavigation("home")}>
-                    Sazzad Hossen.
+                    Sazzad Himel.
                 </div>
                 <div className="footer-column">
                     <p>Full-Stack Developer • Tech Enthusiast • Data Scientist
@@ -39,7 +39,7 @@ const Footer = ({ navigate }) => {
                 </div>
             </div>
             <div className="footer-copyright">
-                <p>&copy; Sazzad Hossen {new Date().getFullYear()} - All Rights Reserved.</p>
+                <p>&copy; Sazzad Himel {new Date().getFullYear()} - All Rights Reserved.</p>
             </div>
         </footer>
     );

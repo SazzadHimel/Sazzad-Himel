@@ -18,7 +18,7 @@ const Header = ({ navigate }) => {
             </div>
             <div className="header-right">
                 <h1>
-                    <span className="skills-heading">Hi, I'm Sazzad Hossen</span>
+                    <span className="skills-heading">Hi, I'm Sazzad Himel</span>
                 </h1>
                 <p>Full-Stack Developer • Tech Enthusiast • Data Science & Ai</p>
                 <div className="social-icons">
