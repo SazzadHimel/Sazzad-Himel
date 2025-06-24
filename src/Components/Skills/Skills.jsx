@@ -22,7 +22,6 @@ const Skills = ({ navigate }) => {
             <div key={index} className="tech-card">
               <img src={skill.logo} alt={skill.name} className="tech-logo" />
               <p className="tech-title">{skill.name}</p>
-              <p className="tech-description">{skill.desc}</p>
             </div>
           ))}
         </div>

@@ -49,6 +49,7 @@ const Navbar = ({ navigate, currentPage }) => {
             <li onClick={() => handleNavigation("about")} className={`hover-effect ${currentPage === "about" ? "active" : ""}`}>About</li>
             <li onClick={() => handleNavigation("skills")} className={`hover-effect ${currentPage === "skills" ? "active" : ""}`}>Skills</li>
             <li onClick={() => handleNavigation("experiences")} className={`hover-effect ${currentPage === "experiences" ? "active" : ""}`}>Experiences</li>
+            <li onClick={() => handleNavigation("achievements")} className={`hover-effect ${currentPage === "achievements" ? "active" : ""}`}>Achievements</li>
             <li onClick={() => handleNavigation("projects")} className={`hover-effect ${currentPage === "projects" ? "active" : ""}`}>Projects</li>
             <li onClick={() => handleNavigation("contact")} className={`hover-effect ${currentPage === "contact" ? "active" : ""}`}>Contact</li>
             </ul>

@@ -41,7 +41,7 @@
   cursor: pointer;
   width: 100%;
   max-width: 180px;
-  min-height: 250px;
+  min-height: 100px;
 }
 
 .tech-card:hover {
@@ -97,7 +97,7 @@
 
   .tech-card {
     max-width: 140px;
-    min-height: 200px;
+    min-height: 100px;
   }
 
   .tech-logo {
@@ -132,7 +132,7 @@
 
   .tech-card {
     max-width: 120px;
-    min-height: 180px;
+    min-height: 100px;
   }
 
   .tech-logo {

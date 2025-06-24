@@ -1,0 +1,46 @@
+.certificate-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  max-width: 510px;
+  max-height: 510px;
+}
+
+.certificate-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px var(--shadow-color);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--tertiary-color);
+}
+
+.achievement-details {
+  margin-top: 20px;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.achievement-details ul {
+  margin: 10px 0 10px 20px;
+  padding-left: 0;
+}
+
+.achievement-details li {
+  margin-bottom: 5px;
+  list-style: disc;
+}
+
+.achievement-details p {
+  margin: 10px 0;
+}
+

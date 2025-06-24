@@ -7,6 +7,7 @@ import Projects from "./Components/Projects/Projects.jsx";
 import Contact from "./Components/Contact/Contact.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import Home from "./Components/Home/Home.jsx";
+import Achievements from "./Components/Achievements/Achievements.jsx";
 
 
 const App = () => {
@@ -47,6 +48,8 @@ const App = () => {
         return <Skills navigate={changePage}/>;
       case "experiences":
         return <Experiences />;
+      case "achievements":
+        return <Achievements />
       case "projects":
         return <Projects />;
       case "contact":
