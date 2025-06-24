@@ -1,17 +1,22 @@
 .certificate-column {
   display: flex;
+  flex-direction: column; /* Stack content vertically on small screens */
   justify-content: center;
   align-items: center;
   padding: 15px;
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.05);
   max-width: 510px;
+  width: 100%; /* Make sure it scales with screen size */
   max-height: 510px;
+  box-sizing: border-box;
+  margin: auto;
 }
 
 .certificate-image {
   width: 100%;
   max-width: 400px;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0px 4px 12px var(--shadow-color);
   cursor: pointer;
@@ -28,11 +33,14 @@
   color: var(--text-color);
   font-size: 0.95rem;
   line-height: 1.6;
+  padding: 0 10px; /* Add horizontal padding for mobile */
+  text-align: left;
 }
 
 .achievement-details ul {
   margin: 10px 0 10px 20px;
   padding-left: 0;
+  text-align: left; /* Left-align list items */
 }
 
 .achievement-details li {
@@ -44,3 +52,34 @@
   margin: 10px 0;
 }
 
+/* Responsive media queries */
+
+@media (max-width: 768px) {
+  .certificate-column {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .certificate-image {
+    max-width: 90%;
+  }
+
+  .achievement-details {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-column {
+    padding: 8px;
+  }
+
+  .achievement-details {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .achievement-details ul {
+    margin-left: 15px;
+  }
+}

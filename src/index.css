@@ -9,11 +9,11 @@
 
 :root {
   --primary-color-light: #ffffff;
-  --primary-color-dark: #121212;
+  --primary-color-dark: #181818;
   --secondary-color-light: #000000;
   --secondary-color-dark: #ffffff;
-  --tertiary-color-light: #083b7c;
-  --tertiary-color-dark: #000dc0;
+  --tertiary-color-light: #18457e;
+  --tertiary-color-dark: #242c95;
   --text-color-light: #242424;
   --text-color-dark: #e0e0e0;
   --shadow-color-light: rgba(0, 0, 0, 0.15);
