@@ -29,7 +29,7 @@ const Footer = ({ navigate }) => {
                         <a href="https://www.facebook.com/himel.s.hossain" target="_blank" rel="noopener noreferrer">
                             <FaFacebook />
                         </a>
-                        <a href="https://www.linkedin.com/in/sazzad-hossen-6205392a3" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/sazzad-himel-6205392a3" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin />
                         </a>
                         <a href="https://github.com/SazzadHimel" target="_blank" rel="noopener noreferrer">

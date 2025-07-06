@@ -6,20 +6,21 @@
   box-sizing: border-box;
   font-family: "Montserrat", serif;
 }
-
 :root {
+  /* Light Mode */
   --primary-color-light: #ffffff;
-  --primary-color-dark: #181818;
-  --secondary-color-light: #000000;
-  --secondary-color-dark: #ffffff;
+  --secondary-color-light: #1e1e1e ;
   --tertiary-color-light: #18457e;
-  --tertiary-color-dark: #242c95;
-  --text-color-light: #242424;
-  --text-color-dark: #e0e0e0;
-  --shadow-color-light: rgba(0, 0, 0, 0.15);
-  --shadow-color-dark: rgba(255, 255, 255, 0.15);
-}
+  --text-color-light: #212121;
+  --shadow-color-light: rgba(0, 0, 0, 0.1);
 
+  /* Dark Mode */
+  --primary-color-dark: #0d1117;
+  --secondary-color-dark: #f0f0f0;
+  --tertiary-color-dark: 	#0639c8;
+  --text-color-dark: #e0e0e0;
+  --shadow-color-dark: rgba(255, 255, 255, 0.05);
+}
 
 [data-theme="light"] {
   --primary-color: var(--primary-color-light);
@@ -36,6 +37,7 @@
   --text-color: var(--text-color-dark);
   --shadow-color: var(--shadow-color-dark);
 }
+
 
 body {
   background-color: var(--primary-color);
@@ -99,8 +101,7 @@ p, h1, h2, h3, li {
 }
 
 .hover-effect.active {
-  color: #0d4da1;
-  border-bottom: 2px solid #0d4da1;
+  color: var(--tertiary-color);
 }
 
 @media (max-width: 768px) {

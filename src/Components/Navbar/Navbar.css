@@ -5,7 +5,7 @@
     padding: 6px 20px;
     padding-left: 10%;
     padding-right: 10%;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); 
     position: fixed;
     top: 0;
     width: 100%;
@@ -16,8 +16,8 @@
 .dark-mode-toggle-wrapper {
     background-color: var(--primary-color);
     cursor: pointer;
-    width: 85px;
-    height: 40px;
+    width: 75px;
+    height: 32px;
     border: 2px solid var(--secondary-color);
     border-radius: 20px;
     overflow: hidden;
@@ -28,9 +28,9 @@
 
 .dark-mode-toggle {
     font-size: 22px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 36px;
+    height: 32px;
+    line-height: 32px;
     text-align: center;
     border-radius: 22px;
     background-color: transparent;
@@ -59,10 +59,10 @@
 
 .menu {
     position: fixed;
-    top: 12%;
+    top: 0%;
     left: -100%;
-    height: 60vh;
-    width: 60%;
+    height: 100vh;
+    width: 50%;
     background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
@@ -193,9 +193,8 @@
 
     .menu {
         position: fixed;
-        top: 14%;
         left: -100%;
-        height: 55vh;
+        height: 100vh;
         width: 50%;
         background-color: var(--primary-color);
         display: flex;
@@ -238,6 +237,7 @@
         height: 2px;
     }
 }
+
 
 @media (min-width: 768px) {
     .menu {
