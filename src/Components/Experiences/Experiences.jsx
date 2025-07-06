@@ -57,7 +57,7 @@ const Experiences = () => {
             <div className="skills-grid">
               {selectedExperience.skills.map((skill, index) => (
                 <div key={index} className="skill-card">
-                  <img src={skill.logo} alt={skill.name} className="skill-logo" />
+                  <img src={skill.logo} alt={skill.name} className="tech-logo" />
                   <p className="skill-name">{skill.name}</p>
                 </div>
               ))}

@@ -50,9 +50,9 @@
 }
 
 .tech-logo {
-  width: 4rem;
-  height: 4rem;
-  margin: 1.5rem 0;
+  width: 3rem;
+  height: 3rem;
+  margin: 1.5rem 0 0 0;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -103,7 +103,7 @@
   .tech-logo {
     width: 3rem;
     height: 3rem;
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
   }
 
   .tech-title {
@@ -136,8 +136,9 @@
   }
 
   .tech-logo {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem 0 0 0;
   }
 
   .tech-title {

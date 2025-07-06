@@ -34,7 +34,7 @@ import Pandas from "../assets/Logos/Pandas.svg";
 export const experience = [
     {
         name: "IBC - 2025",
-        title: "Frontend Developer",
+        title: "Static Website",
         description: "Worked on developing a conference website of BRAC University which is the International Biotechnology Conference 2025, a premier event that will bring together leading experts, researchers, and innovators from around the globe to explore the cutting-edge developments in the rapidly advancing field of biotechnology.",
         link: "https://ibc.bracu.ac.bd/",
         images: [IBC1, IBC2, IBC3, IBC4, IBC5, IBC6],
@@ -47,7 +47,7 @@ export const experience = [
     },
     {
         name: "BUReD Club",
-        title: "Frontend Developer",
+        title: "Static Websiter",
         description: "This website is a dedicated project for the BRAC University Research for Development Club. As a volunteer effort for the club, I have employed HTML, CSS, and JavaScript to create an engaging and functional digital presence. This platform showcases the club's commitment to fostering research and development initiatives within the university community.",
         link: "https://bracu-research-for-development-club-y.netlify.app/",
         images: [BUReD1, BUReD2, BUReD3, BUReD4, BUReD5, BUReD6],
