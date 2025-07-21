@@ -2,13 +2,30 @@ import IBMDataScienceProfessional from '../Certificates/IBM-Data-Science-Profess
 import MachineLearning from '../Certificates/Machine-Learning-Specialization.jpg';
 import DeepLearning from '../Certificates/Deep-Learning-Specialization.jpg';
 import DataAnalyticsCareerBootcamp from '../Certificates/Data-Analytics-Career-Bootcamp.png';
+import MicrosoftAiProductManager from '../Certificates/Microsoft-AI-Product-Manager.jpg';
 
 export const achievements = [
-  {
-    name: 'IBM Data Science Professional',
-    image: IBMDataScienceProfessional,
-    description: 'Completed 12 in-depth courses covering the essential data science pipeline using Python, SQL, and machine learning techniques.',
-    details: `
+    {
+        name: 'Microsoft AI Product Manager',
+        image: MicrosoftAiProductManager,
+        description: 'Completed 5 practical courses focused on AI product development, market strategy, and product lifecycle management.',
+        details: `
+            <p>This professional certificate consisted of the following courses:</p>
+            <ul>
+                <li>Enterprise Product Management Fundamentals</li>
+                <li>Market Research and Competitive Analysis</li>
+                <li>Product Strategy and Roadmapping</li>
+                <li>Product Design and UX/UI Fundamentals</li>
+                <li>Product Launch and Post-Launch Management</li>
+            </ul>
+        `,
+        link: 'https://coursera.org/share/ec8d343fa7428c3fd6d166d272017272',
+    },
+    {
+        name: 'IBM Data Science Professional',
+        image: IBMDataScienceProfessional,
+        description: 'Completed 12 in-depth courses covering the essential data science pipeline using Python, SQL, and machine learning techniques.',
+        details: `
         <p>This professional certificate consisted of the following courses:</p>
         <ul>
             <li>What is Data Science?</li>
@@ -24,8 +41,8 @@ export const achievements = [
             <li>Generative AI: Boost Your Data Science Career</li>
             <li>Career Guide for Data Scientists and Interview Readiness</li>
         </ul>
-    `,
-    link: 'https://www.coursera.org/account/accomplishments/specialization/COIHZWHAZF6W',
+        `,
+        link: 'https://www.coursera.org/account/accomplishments/specialization/COIHZWHAZF6W',
     },
     {
         name: 'Machine Learning Specialization',
