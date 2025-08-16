@@ -81,6 +81,7 @@ export const achievements = [
         details: `
         <p>Emphasized project-based learning, real datasets, and dashboard creation using Tableau and Power BI.</p>
         `,
+        link: 'https://drive.google.com/file/d/1xdhMUbmR6YtNC8mAj6-6uXQLDWNzt_h1/view',
     },
 ];
 

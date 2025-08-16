@@ -19,10 +19,10 @@ return (
                     </h2>
                     <p className="about-intro">Hello! I'm <strong>Sazzad Himel</strong>.</p>
                     <p>
-                    A dedicated undergraduate student in the Computer Science & Engineering department at <strong>BRAC University</strong>.
-                    I am committed to excellence, and my versatile skills as a <strong>Web Developer</strong> enable me to craft innovative digital solutions.
-                    With a deep passion for <strong>Web Design</strong> (Laravel-PHP, MERN-JavaScript), <strong>Machine Learning</strong> (Python), and <strong>Data Science</strong> (Excel, MySQL, NumPy, Seaborn, Pandas),
-                    I strive to explore and master advancements in these fields, creating impactful and elegant solutions that push boundaries.
+                    Developer with practical experience in <strong>AI, Machine Learning, Deep Learning, and full-stack development </strong>
+                    using <strong>MERN, Laravel and FastAPI</strong> frameworks. Applied data-driven methods and back-end integration to
+                    build scalable web applications and AI-based tools. Interested in solving real-world challenges through automation,
+                    predictive modeling, and robust system design in the field of Data Science & Ai.
                     </p>
                 </div>
             </div>
