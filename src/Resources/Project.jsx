@@ -1,4 +1,11 @@
 
+//--------Skill Swap---------//
+import SS1 from "../assets/Skill-Swap/Image-1.png";
+import SS2 from "../assets/Skill-Swap/Image-2.png";
+import SS3 from "../assets/Skill-Swap/Image-3.png";
+import SS4 from "../assets/Skill-Swap/Image-4.png";
+import SS5 from "../assets/Skill-Swap/Image-5.png";
+import SS6 from "../assets/Skill-Swap/Image-6.png";
 
 //--------Online Food Ordering---------//
 import OFOS1 from "../assets/Online-Food-Ordering/Image-1.png";
@@ -10,28 +17,13 @@ import OFOS6 from "../assets/Online-Food-Ordering/Image-6.png";
 import OFOS7 from "../assets/Online-Food-Ordering/Image-7.png";
 import OFOS8 from "../assets/Online-Food-Ordering/Image-8.png";
 
-//--------Rent Ease---------//
-import RE1 from "../assets/Rent-Ease/Image-1.jpg";
-import RE2 from "../assets/Rent-Ease/Image-2.jpg";
-import RE3 from "../assets/Rent-Ease/Image-3.jpg";
-import RE4 from "../assets/Rent-Ease/Image-4.jpg";
-import RE5 from "../assets/Rent-Ease/Image-5.jpg";
-
-//--------Online Food Ordering System---------//
+//--------Money Heist Game---------//
 import MHG1 from "../assets/Money-Heist-Game/Image-1.png";
 import MHG2 from "../assets/Money-Heist-Game/Image-2.png";
 import MHG3 from "../assets/Money-Heist-Game/Image-3.png";
 import MHG4 from "../assets/Money-Heist-Game/Image-4.png";
 import MHG5 from "../assets/Money-Heist-Game/Image-5.png";
 import MHG6 from "../assets/Money-Heist-Game/Image-6.png";
-
-//--------Breast Cancer Classification---------//
-import BCC1 from "../assets/Breast-Cancer-Classification/Image-1.png";
-import BCC2 from "../assets/Breast-Cancer-Classification/Image-2.png";
-import BCC3 from "../assets/Breast-Cancer-Classification/Image-3.png";
-import BCC4 from "../assets/Breast-Cancer-Classification/Image-4.png";
-import BCC5 from "../assets/Breast-Cancer-Classification/Image-5.png";
-import BCC6 from "../assets/Breast-Cancer-Classification/Image-6.png";
 
 //--------Logos---------//
 import Html from "../assets/Logos/HTML5.svg";
@@ -54,6 +46,24 @@ import NumPy from "../assets/Logos/NumPy.svg";
 
 export const projects = [
     {
+        name: "Skill Swap",
+        title: "Full-Stack Developer (React + FastAPI Project)",
+        description:
+            "SkillSwap is a full-stack web application that enables people to learn and teach skills in an interactive marketplace-like platform. Users can create skill listings, join events, manage wishlists, leave ratings, and engage with a vibrant learning community. The platform is built with a FastAPI backend (SQLAlchemy ORM + Pydantic) and a React frontend, providing a smooth user experience with authentication, notifications, and payment flow.",
+        link: "https://skill-swap-ten-kappa.vercel.app/",
+        images: [SS1, SS2, SS3, SS4, SS5, SS6],
+        skills: [
+            { name: 'HTML', logo: Html },
+            { name: 'CSS', logo: CSS },
+            { name: 'JavaScript', logo: JavaScript },
+            { name: 'React', logo: React },
+            { name: 'Python', logo: Python },
+            { name: 'ExpressJs', logo: ExpressJs },
+            { name: 'MongoDB', logo: MongoDB },
+            { name: 'Postman', logo: Postman },
+        ]
+    },
+    {
         name: "Online Food Ordering",
         title: "Full-Stack Developer (Laravel Project)",
         description:
@@ -70,24 +80,6 @@ export const projects = [
         ]
     },
     {
-        name: "Rent Ease",
-        title: "Full-Stack Developer (MERN Project)",
-        description:
-            "The Renting System is a user-friendly web platform connecting Customers and Proprietors for seamless item rentals. It features dedicated dashboards, profile management, and admin control over user accounts. Proprietors can manage their rentable items and receive notifications on rentals and returns. Customers can search, filter, add to cart or wishlist, and leave item reviews. The system supports real-time order tracking, invoice generation, multiple payment methods, and order cancellations. Additional features include real-time chat support, personalized email marketing, and sales-based promotions. Designed for efficiency and convenience, the Renting System simplifies rental operations for all users.",
-        link: "https://github.com/SazzadHimel/Renting-System-Rent-Ease.git",
-        images: [RE1, RE2, RE3, RE4, RE5],
-        skills: [
-            { name: 'HTML', logo: Html },
-            { name: 'CSS', logo: CSS },
-            { name: 'JavaScript', logo: JavaScript },
-            { name: 'React', logo: React },
-            { name: 'NodeJs', logo: NodeJs },
-            { name: 'ExpressJs', logo: ExpressJs },
-            { name: 'MongoDB', logo: MongoDB },
-            { name: 'Postman', logo: Postman },
-        ]
-    },
-    {
         name: "Money Heist Game",
         title: "Computer Graphics Designer (Python Project)",
         description: "This project is an immersive game crafted using the Python OpenGL library, enriched with fundamental computer graphics algorithms like the midpoint circle drawing algorithm and midpoint line drawing algorithm. These algorithms, renowned for their efficiency and elegance, contribute to the captivating visual experience and smooth gameplay. Through meticulous implementation and attention to detail, this game seamlessly blends advanced graphics technology with timeless algorithmic principles, resulting in an engaging and immersive gaming experience that captivates players of all levels.",
@@ -97,18 +89,5 @@ export const projects = [
             { name: 'OpenGL', logo: OpenGL },
             { name: 'Python', logo: Python },
         ]
-    },
-    {
-        name: "Breast Cancer Classification",
-        title: "Mechine Learning (Python Project)",
-        description: "Breast Cancer is a common illness in the public health. The death rate of breast cancer patients is increasing every year. However, if it is diagnosed at a very early stage then the possibility of cure increases significantly. Machine Learning models are used effectively to classify cancer tumors by observing its input features like: radius, perimetre, area and so on. In this project, we have implemented Logistic Regression, Decision Tree and Random Forest Classifier models to classify between malignant and benign tumors. We observed the highest accuracy from Random Forest Classifier whereas Decision Tree generated the least accurate results.",
-        link: "https://github.com/SazzadHimel/Breast-Cancer-Classification.git",
-        images: [BCC1, BCC2, BCC3, BCC4, BCC5, BCC6],
-        skills: [
-            { name: 'Python', logo: Python },
-            { name: 'Pandas', logo: Pandas },
-            { name: 'Matplotlib', logo: Matplotlib },
-            { name: 'NumPy', logo: NumPy },
-        ]
-    },
+    }
 ];
