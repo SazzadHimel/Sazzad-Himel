@@ -1,95 +1,63 @@
-import React from 'react';
-import { experience } from '../../Resources/Experiences.jsx';
-import SubHeader from '../Sub-Header/SubHeader.jsx';
-import './Experiences.css';
+import { useState } from "react";
+import { experience } from "../../Resources/Experiences.jsx";
+import Tilt3D from "../3D/Tilt3D.jsx";
+import "./Experiences.css";
 
 const Experiences = () => {
-  const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
-  const [selectedImageIndex, setSelectedImageIndex] = React.useState(null);
-
-  const selectedExperience = experience[selectedItemIndex];
-  const images = selectedExperience.images.slice(0, 9);
-
-  const handleImageClick = (index) => {
-    setSelectedImageIndex(index);
-  };
-
-  const closeModal = () => setSelectedImageIndex(null);
-
-  const goToPrev = () =>
-    setSelectedImageIndex((prev) => (prev - 1 + images.length) % images.length);
-
-  const goToNext = () =>
-    setSelectedImageIndex((prev) => (prev + 1) % images.length);
+  const [selected, setSelected] = useState(0);
+  const exp = experience[selected];
 
   return (
-    <div>
-      <SubHeader title="Experiences" />
-      <div className="container space">
-        <div className="tabs">
-          {experience.map((exp, index) => (
-            <div
-              key={index}
-              className={`tab ${selectedItemIndex === index ? 'active' : ''}`}
-              onClick={() => setSelectedItemIndex(index)}
-            >
-              {exp.name}
-            </div>
-          ))}
-        </div>
+    <div className="container space">
+      <div className="section-heading">
+        <h2 className="text-gradient">Experiences</h2>
+        <div className="section-divider" />
+        <p>Real-world projects and contributions I've worked on.</p>
+      </div>
 
-        <div className="content-layout">
-          <div className="details-column">
-            <h3 className="title">{selectedExperience.title}</h3>
-            <p className="description">
-              <span className="label">Description:</span> {selectedExperience.description}
-            </p>
+      {/* Tabs */}
+      <div className="exp-tabs">
+        {experience.map((e, i) => (
+          <button
+            key={i}
+            className={`exp-tab ${selected === i ? "exp-tab--active" : ""}`}
+            onClick={() => setSelected(i)}
+          >
+            {e.name}
+          </button>
+        ))}
+      </div>
+
+      {/* Content */}
+      <Tilt3D className="glass-panel exp-card" max={4} scale={1.01} glare>
+        <div className="exp-card__inner">
+          <div className="exp-card__header">
+            <h3 className="exp-card__title text-gradient">{exp.title}</h3>
             <a
-              className="link"
-              href={selectedExperience.link}
+              href={exp.link}
               target="_blank"
               rel="noopener noreferrer"
+              className="exp-card__link"
             >
-              Visit Website →
+              🔗 Visit Website →
             </a>
+          </div>
 
-            <p className="label">Skills Used:</p>
-            <div className="skills-grid">
-              {selectedExperience.skills.map((skill, index) => (
-                <div key={index} className="skill-card">
-                  <img src={skill.logo} alt={skill.name} className="tech-logo" />
-                  <p className="skill-name">{skill.name}</p>
+          <p className="exp-card__desc">{exp.description}</p>
+
+          <div className="exp-card__skills">
+            <p className="exp-card__skills-label">Technologies Used</p>
+            <div className="exp-card__skills-grid">
+              {exp.skills.map((skill, i) => (
+                <div key={i} className="exp-skill-chip">
+                  <img src={skill.logo} alt={skill.name} />
+                  <span>{skill.name}</span>
                 </div>
               ))}
             </div>
           </div>
-
-          <div className="gallery-column">
-            {images.map((img, idx) => (
-              <img
-                key={idx}
-                src={img}
-                alt={`Experience ${idx}`}
-                className="gallery-image"
-                onClick={() => handleImageClick(idx)}
-              />
-            ))}
-          </div>
         </div>
-
-        {selectedImageIndex !== null && (
-          <div className="modal" onClick={closeModal}>
-            <span className="close">&times;</span>
-            <button className="nav prev" onClick={(e) => { e.stopPropagation(); goToPrev(); }}>‹</button>
-            <img
-              className="modal-content"
-              src={images[selectedImageIndex]}
-              alt="Zoomed"
-            />
-            <button className="nav next" onClick={(e) => { e.stopPropagation(); goToNext(); }}>›</button>
-          </div>
-        )}
-      </div>
+      </Tilt3D>
     </div>
   );
 };

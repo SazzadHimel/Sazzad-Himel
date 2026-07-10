@@ -20,7 +20,7 @@ const Footer = ({ navigate }) => {
                 </div>
                 <div className="footer-column">
                     <p>Full-Stack Developer • Tech Enthusiast • Data Scientist
-                        <br/> Dhaka 1217, Bangladesh
+                        <br /> Dhaka 1217, Bangladesh
                     </p>
                 </div>
                 <div className="footer-column socials-column">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import About from "./Components/About/About.jsx";
 import Skills from "./Components/Skills/Skills.jsx";
@@ -6,66 +6,95 @@ import Experiences from "./Components/Experiences/Experiences.jsx";
 import Projects from "./Components/Projects/Projects.jsx";
 import Contact from "./Components/Contact/Contact.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
-import Home from "./Components/Home/Home.jsx";
+import Hero from "./Components/Hero/Hero.jsx";
 import Achievements from "./Components/Achievements/Achievements.jsx";
+import CanvasBackground from "./Components/3D/CanvasBackground.jsx";
+import Preloader from "./Components/Preloader/Preloader.jsx";
+import "./Components/Preloader/Preloader.css";
 
+const SECTIONS = ["hero", "about", "skills", "experiences", "achievements", "projects", "contact"];
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState(() => {
-    return window.location.pathname.slice(1) || "home";
-  });
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+  const sectionRefs = useRef({});
 
-  const changePage = (newPage) => {
-    setIsTransitioning(true);
-
-    setTimeout(() => {
-      setCurrentPage(newPage);
-      setIsTransitioning(false);
-    }, 500);
-  };
-
+  // Intersection Observer to track active section & trigger animations
   useEffect(() => {
-    const handlePopState = () => {
-      const page = window.location.pathname.slice(1) || "home";
-      setCurrentPage(page);
-    };
+    if (!loaded) return;
 
-    window.addEventListener("popstate", handlePopState);
+    const observers = [];
 
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, []);
+    SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case "home":
-        return <Home navigate={changePage} />;
-      case "about":
-        return <About />;
-      case "skills":
-        return <Skills navigate={changePage}/>;
-      case "experiences":
-        return <Experiences />;
-      case "achievements":
-        return <Achievements />
-      case "projects":
-        return <Projects />;
-      case "contact":
-        return <Contact />;
-      default:
-        return <Home navigate={changePage} />;
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(id);
+              entry.target.classList.add("section--in-view");
+            }
+          });
+        },
+        { threshold: 0.18 }
+      );
+
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, [loaded]);
+
+  const navigateTo = (sectionId) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  if (!loaded) {
+    return <Preloader onComplete={() => setLoaded(true)} />;
+  }
+
   return (
-    <div>
-      <Navbar navigate={changePage} currentPage={currentPage} />
-      <div className={`page-content ${isTransitioning ? "page-transition-exit" : "page-transition-enter"}`}>
-        {renderPage()}
-      </div>
-      <Footer navigate={changePage} />
+    <div className="app-wrapper">
+      <CanvasBackground />
+      <Navbar activeSection={activeSection} navigateTo={navigateTo} />
+
+      <main>
+        <section id="hero" className="page-section">
+          <Hero navigateTo={navigateTo} />
+        </section>
+
+        <section id="about" className="page-section">
+          <About />
+        </section>
+
+        <section id="skills" className="page-section">
+          <Skills />
+        </section>
+
+        <section id="experiences" className="page-section">
+          <Experiences />
+        </section>
+
+        <section id="achievements" className="page-section">
+          <Achievements />
+        </section>
+
+        <section id="projects" className="page-section">
+          <Projects />
+        </section>
+
+        <section id="contact" className="page-section">
+          <Contact />
+        </section>
+      </main>
+
+      <Footer navigateTo={navigateTo} />
     </div>
   );
 };

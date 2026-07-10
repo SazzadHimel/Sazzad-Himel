@@ -1,45 +1,39 @@
-import React from 'react';
-import { skills } from '../../Resources/Skills.jsx';
-import SubHeader from '../Sub-Header/SubHeader.jsx';
-import './Skills.css';
-import PropTypes from "prop-types";
+import { skills } from "../../Resources/Skills.jsx";
+import Tilt3D from "../3D/Tilt3D.jsx";
+import "./Skills.css";
 
-const Skills = ({ navigate }) => {
+const CATEGORY_COLORS = [
+  "indigo", "cyan", "pink", "violet", "emerald", "amber",
+  "rose", "blue", "indigo", "cyan", "pink", "violet",
+  "emerald", "amber", "rose", "blue", "indigo", "cyan", "pink", "violet",
+];
 
+const Skills = () => {
   return (
-    <div>
-      <SubHeader title="Skills Learned" />
-      <div className="container space">
-        <div>
-          <p className="skills-description">
-            Bellow is a curated list of technologies and tools I’ve worked with, spanning frontend, backend, databases, APIs, data science, 
-            and more. Each one has contributed to shaping my projects and development journey.
-          </p>
-        </div>
+    <div className="container space">
+      <div className="section-heading">
+        <h2 className="text-gradient">Skills & Technologies</h2>
+        <div className="section-divider" />
+        <p>A curated collection of technologies I've worked on.</p>
+      </div>
 
-        <div className="skills-gallery">
-          {skills.map((skill, index) => (
-            <div key={index} className="tech-card">
-              <img src={skill.logo} alt={skill.name} className="tech-logo" />
-              <p className="tech-title">{skill.name}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className='skills-heading'>
-          <h2 className="skills-heading">Want to see these in action?</h2>
-          <p className="tech-title">Explore the projects I've built using these technologies.</p>
-          <button className="btn" onClick={() => navigate("projects")}>
-            View Projects
-          </button>
-        </div>
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <Tilt3D
+            key={index}
+            className={`glass-panel skill-card skill-card--${CATEGORY_COLORS[index % CATEGORY_COLORS.length]}`}
+            max={18}
+            scale={1.1}
+            glare
+          >
+            <div className="skill-card__glow" />
+            <img src={skill.logo} alt={skill.name} className="skill-card__logo" />
+            <p className="skill-card__name">{skill.name}</p>
+          </Tilt3D>
+        ))}
       </div>
     </div>
   );
-};
-
-Skills.propTypes = {
-    navigate: PropTypes.func.isRequired,
 };
 
 export default Skills;

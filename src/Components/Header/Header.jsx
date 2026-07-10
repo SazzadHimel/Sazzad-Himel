@@ -4,6 +4,7 @@ import headerImage from "../../assets/SazzadHimel.jpg";
 import resumePDF from "../../Documents/SazzadHimel_CV.pdf";
 import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { HiOutlineDocumentText } from 'react-icons/hi';
+import Tilt3D from "../3D/Tilt3D.jsx";
 
 const Header = ({ navigate }) => {
     const handleNavigation = (page) => {
@@ -14,22 +15,26 @@ const Header = ({ navigate }) => {
     return (
         <div className="header container">
             <div className="header-left">
-                <img src={headerImage} alt="Profile" className="header-image" />
+                <Tilt3D max={15} scale={1.06} glare={true} className="profile-tilt-wrapper">
+                    <div className="image-glow-container">
+                        <img src={headerImage} alt="Profile" className="header-image" />
+                    </div>
+                </Tilt3D>
             </div>
             <div className="header-right">
-                <h1>
-                    <span className="skills-heading">Hi, I'm Sazzad Himel</span>
+                <h1 className="header-name">
+                    Hi, I'm <span className="text-gradient">Sazzad Himel</span>
                 </h1>
-                <p>Full-Stack Developer • Tech Enthusiast • Data Science & Ai</p>
+                <p className="header-subtitle">Full-Stack Developer • Tech Enthusiast • Data Science & AI</p>
                 <div className="social-icons">
-                    <a href="https://www.facebook.com/himel.s.hossain" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-                    <a href="https://www.linkedin.com/in/sazzad-himel-6205392a3" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-                    <a href="https://github.com/SazzadHimel" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+                    <a href="https://www.facebook.com/himel.s.hossain" target="_blank" rel="noopener noreferrer" className="social-icon"><FaFacebook /></a>
+                    <a href="https://www.linkedin.com/in/sazzad-himel-6205392a3" target="_blank" rel="noopener noreferrer" className="social-icon"><FaLinkedin /></a>
+                    <a href="https://github.com/SazzadHimel" target="_blank" rel="noopener noreferrer" className="social-icon"><FaGithub /></a>
                 </div>
-                <div>
+                <div className="header-cta">
                     <a href={resumePDF} target="_blank" rel="noopener noreferrer">
-                        <button className="btn" onClick={() => handleNavigation("home")}>
-                            <HiOutlineDocumentText className="inline mr-2"/> Resume
+                        <button className="btn inline-flex items-center gap-2" onClick={() => handleNavigation("home")}>
+                            <HiOutlineDocumentText size={20} style={{ marginRight: '6px', verticalAlign: 'middle' }} /> Resume
                         </button>
                     </a>
                 </div>

@@ -1,111 +1,111 @@
-
 footer {
     width: 100%;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    padding: 10px 0;
-    align-content: center;
-    box-shadow: 0px 4px 40px var(--shadow-color);
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 30px 0 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--card-border);
+    box-shadow: 0 -10px 30px var(--shadow-color);
 }
 
 .footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    padding: 0 20px;
+    padding: 0 10%;
     flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .footer-column {
     flex: 1;
-    padding: 0 20px;
-    justify-content: center;
-    text-align: center;
+    min-width: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
-.logo-column img {
-    margin-bottom: 10px;
+.footer-column:first-child {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-column:last-child {
+    align-items: flex-end;
+    text-align: right;
 }
 
 .footer-column p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--secondary-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.95;
 }
 
 .socials-column p {
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .footer-socials {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    gap: 15px;
 }
 
 .footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     color: var(--text-color);
-    font-size: 2.5rem;
-    transition: color 0.3s ease-in-out;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .footer-socials a:hover {
-    color: var(--tertiary-color);
+    color: #ffffff;
+    background: var(--btn-gradient);
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
 }
 
 .footer-copyright {
     text-align: center;
-    font-size: 0.9rem;
-    margin-top: 20px;
-    border-top: 1px solid var(--tertiary-color);
-    padding-top: 10px;
-    color: var(--secondary-color);
+    font-size: 0.85rem;
+    margin-top: 30px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 15px;
+    color: var(--text-muted);
 }
 
 @media (max-width: 768px) {
     .footer {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        gap: 20px;
     }
 
     .footer-column {
+        align-items: center !important;
+        text-align: center !important;
         min-width: 100%;
-        margin: 10px 0px;
+        padding: 5px 0;
     }
 
     .footer-column p {
-        font-size: 0.8rem;
-        line-height: 1.8;
+        font-size: 0.85rem;
     }
 
-    .bracu-logo {
-        width: auto;
-        height: 60px;
-        margin: auto 20px;
-    }
-
-    .event-logo {
-        width: 150px;
-        height: auto;
-        margin: auto 10px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .address-column p {
-        font-size: 0.9rem;
-    }
-
-    .footer-socials a {
-        font-size: 2.2rem;
-    }
-
-    .footer-copyright {
-        font-size: 0.8rem;
+    .footer-socials {
+        justify-content: center;
     }
 }

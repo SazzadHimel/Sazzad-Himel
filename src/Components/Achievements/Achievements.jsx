@@ -1,83 +1,52 @@
-import React, { useState } from 'react';
-import { achievements } from '../../Resources/Achievemnets.jsx';
-import SubHeader from '../Sub-Header/SubHeader.jsx';
-import './Achievements.css';
+import { achievements } from "../../Resources/Achievemnets.jsx";
+import Tilt3D from "../3D/Tilt3D.jsx";
+import "./Achievements.css";
+
+const COLORS = ["indigo", "cyan", "pink", "violet", "emerald"];
 
 const Achievements = () => {
-    const [selectedIndex, setSelectedIndex] = useState(0);
-    const [modalOpen, setModalOpen] = useState(false);
+  return (
+    <div className="container space">
+      <div className="section-heading">
+        <h2 className="text-gradient">Achievements</h2>
+        <div className="section-divider" />
+        <p>Professional certifications and courses I've completed.</p>
+      </div>
 
-    const selectedAchievement = achievements[selectedIndex];
+      <div className="achievements-grid">
+        {achievements.map((item, i) => (
+          <Tilt3D
+            key={i}
+            className={`glass-panel achievement-card achievement-card--${COLORS[i % COLORS.length]}`}
+            max={8}
+            scale={1.03}
+            glare
+          >
+            <div className="achievement-card__top-bar" />
+            <div className="achievement-card__body">
+              <div className="achievement-card__icon">🏆</div>
+              <h3 className="achievement-card__name">{item.name}</h3>
+              <p className="achievement-card__desc">{item.description}</p>
 
-    return (
-        <div>
-        <SubHeader title="Achievements" />
-        <div className="container space">
-            <div className="tabs">
-            {achievements.map((item, index) => (
-                <div
-                key={index}
-                className={`tab ${selectedIndex === index ? 'active' : ''}`}
-                onClick={() => setSelectedIndex(index)}
-                >
-                {item.name}
-                </div>
-            ))}
-            </div>
+              <div
+                className="achievement-card__details"
+                dangerouslySetInnerHTML={{ __html: item.details }}
+              />
 
-            <div className="content-layout">
-            <div className="details-column">
-                <h3 className="title">{selectedAchievement.name}</h3>
-                <p className="description">
-                <span className="label">Description:</span> {selectedAchievement.description}
-                </p>
-                <div
-                    className="achievement-details"
-                    dangerouslySetInnerHTML={{ __html: selectedAchievement.details }}
-                    ></div>
-                {/* <p className="label">Skills Learned:</p>
-                <div className="skills-grid">
-                {selectedAchievement.skills.map((skill, i) => (
-                    <div key={i} className="skill-card">
-                    <img src={skill.logo} alt={skill.name} className="skill-logo" />
-                    <p className="skill-name">{skill.name}</p>
-                    </div>
-                ))}
-                </div> */}
-                <a
-                href={selectedAchievement.link}
+              <a
+                href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link"
-                >
+                className={`achievement-card__btn achievement-card__btn--${COLORS[i % COLORS.length]}`}
+              >
                 View Certificate →
-                </a>
+              </a>
             </div>
-
-            <div className="certificate-column">
-                <img
-                src={selectedAchievement.image}
-                alt={selectedAchievement.name}
-                className="certificate-image"
-                onClick={() => setModalOpen(true)}
-                />
-            </div>
-            </div>
-
-            {modalOpen && (
-            <div className="modal" onClick={() => setModalOpen(false)}>
-                <span className="close" onClick={() => setModalOpen(false)}>&times;</span>
-                <img
-                src={selectedAchievement.image}
-                className="modal-content"
-                alt="Certificate"
-                onClick={(e) => e.stopPropagation()}
-                />
-            </div>
-            )}
-        </div>
-        </div>
-    );
+          </Tilt3D>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Achievements;

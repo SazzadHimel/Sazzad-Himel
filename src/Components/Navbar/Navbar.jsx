@@ -2,72 +2,95 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./Navbar.css";
 
-const Navbar = ({ navigate, currentPage }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
+const NAV_LINKS = [
+  { id: "hero", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "experiences", label: "Experiences" },
+  { id: "achievements", label: "Achievements" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-    const closeMenu = () => setIsMenuOpen(false);
+const Navbar = ({ activeSection, navigateTo }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    const handleNavigation = (page) => {
-        closeMenu();
-        navigate(page);
-        window.scrollTo(0, 0);
-    };
+  useEffect(() => {
+    const saved = localStorage.getItem("darkMode") === "true";
+    setDarkMode(saved);
+    document.documentElement.setAttribute("data-theme", saved ? "dark" : "light");
+  }, []);
 
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-    };
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
-    useEffect(() => {
-        const savedMode = localStorage.getItem("darkMode") === "true";
-        setDarkMode(savedMode);
-    }, []);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    useEffect(() => {
-        localStorage.setItem("darkMode", darkMode);
-        if (darkMode) {
-        document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-        document.documentElement.setAttribute("data-theme", "light");
-        }
-    }, [darkMode]);
+  const handleNav = (id) => {
+    setIsMenuOpen(false);
+    navigateTo(id);
+  };
 
-    return (
-        <nav className="navbar container">
-        <div className="brand-name" onClick={() => handleNavigation("home")}>
-            Sazzad Himel.
-        </div>
-        <div className="dark-mode-toggle-wrapper" onClick={toggleDarkMode}>
-            <div className={`dark-mode-toggle ${darkMode ? "dark" : "light"}`}>
-                {darkMode ? "🌞" : "🌙"}
-            </div>
-        </div>
-        <div className={`menu ${isMenuOpen ? "open" : ""}`}>
-            <ul>
-            <li onClick={() => handleNavigation("home")} className={`hover-effect ${currentPage === "home" ? "active" : ""}`}>Home</li>
-            <li onClick={() => handleNavigation("about")} className={`hover-effect ${currentPage === "about" ? "active" : ""}`}>About</li>
-            <li onClick={() => handleNavigation("skills")} className={`hover-effect ${currentPage === "skills" ? "active" : ""}`}>Skills</li>
-            <li onClick={() => handleNavigation("experiences")} className={`hover-effect ${currentPage === "experiences" ? "active" : ""}`}>Experiences</li>
-            <li onClick={() => handleNavigation("achievements")} className={`hover-effect ${currentPage === "achievements" ? "active" : ""}`}>Achievements</li>
-            <li onClick={() => handleNavigation("projects")} className={`hover-effect ${currentPage === "projects" ? "active" : ""}`}>Projects</li>
-            <li onClick={() => handleNavigation("contact")} className={`hover-effect ${currentPage === "contact" ? "active" : ""}`}>Contact</li>
-            </ul>
-        </div>
-        <div className="hamburger" onClick={toggleMenu}>
-            <div className={`bars-icon ${isMenuOpen ? "open" : ""}`}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            </div>
-        </div>
+  return (
+    <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+      <div className="navbar__brand" onClick={() => handleNav("hero")}>
+        <span className="navbar__brand-text text-gradient">SH</span>
+        <span className="navbar__brand-dot" />
+      </div>
+
+      <div className={`navbar__menu ${isMenuOpen ? "navbar__menu--open" : ""}`}>
+        <ul>
+          {NAV_LINKS.map(({ id, label }) => (
+            <li key={id}>
+              <button
+                className={`navbar__link ${activeSection === id ? "navbar__link--active" : ""}`}
+                onClick={() => handleNav(id)}
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="navbar__right">
+        <button
+          className="navbar__theme-btn"
+          onClick={() => setDarkMode(!darkMode)}
+          aria-label="Toggle dark mode"
+        >
+          <span className="navbar__theme-track">
+            <span className={`navbar__theme-thumb ${darkMode ? "navbar__theme-thumb--dark" : ""}`}>
+              {darkMode ? "🌞" : "🌙"}
+            </span>
+          </span>
+        </button>
+
+        <button
+          className={`navbar__hamburger ${isMenuOpen ? "navbar__hamburger--open" : ""}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
     </nav>
-    );
+  );
 };
 
 Navbar.propTypes = {
-    navigate: PropTypes.func.isRequired,
-    currentPage: PropTypes.string.isRequired,
+  activeSection: PropTypes.string.isRequired,
+  navigateTo: PropTypes.func.isRequired,
 };
 
 export default Navbar;

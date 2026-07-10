@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import SubHeader from '../Sub-Header/SubHeader.jsx';
 import profileImg from '../../assets/SazzadHimel.jpg';
 import './Contact.css';
+import Tilt3D from '../3D/Tilt3D.jsx';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -29,19 +29,15 @@ function Contact() {
 
   return (
     <div>
-      <SubHeader title="Contact Me"/>
       <div className="container space">
+        <div className="section-heading">
+          <h2 className="text-gradient">Get in Touch</h2>
+          <div className="section-divider" />
+          <p>Feel free to reach out to me via email or send a message using the form.</p>
+        </div>
         <div className="content-layout">
-          <div className="details-column">
-            <img src={profileImg} alt="Profile" className="contact-image" />
-            <h3 className="title">Get in Touch</h3>
-            <p className="description">Feel free to reach out to me via email or send a message using the form.</p>
-            <p className="description"><span className="label">Name:</span> Sazzad Hossen Himel</p>
-            <p className="description"><span className="label">Address:</span> Dhaka-1217, Bangladesh</p>
-            <p className="description"><span className="label">Phone:</span> +8801626-415005</p>
-            <p className="description"><span className="label">Email:</span> <a className="link" href="mailto:himel.s.hossain@gmail.com">himel.s.hossain@gmail.com</a></p>
-          </div>
-          <div className="form-wrapper">
+
+          <Tilt3D className="glass-panel form-wrapper" max={6} scale={1.01} glare={true}>
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
                 <label htmlFor="from">Your Email:</label>
@@ -82,9 +78,9 @@ function Contact() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn">Send</button>
+              <button type="submit" className="btn submit-btn">Send Message</button>
             </form>
-          </div>
+          </Tilt3D>
         </div>
       </div>
     </div>
