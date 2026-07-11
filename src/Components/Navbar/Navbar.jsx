@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import Logo from "../Logo/Logo.jsx";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -15,7 +16,6 @@ const NAV_LINKS = [
 const Navbar = ({ activeSection, navigateTo }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("darkMode") === "true";
@@ -28,22 +28,16 @@ const Navbar = ({ activeSection, navigateTo }) => {
     document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   const handleNav = (id) => {
     setIsMenuOpen(false);
     navigateTo(id);
   };
 
   return (
-    <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+    <nav className="navbar navbar--scrolled">
       <div className="navbar__brand" onClick={() => handleNav("hero")}>
-        <span className="navbar__brand-text text-gradient">SH</span>
-        <span className="navbar__brand-dot" />
+        <Logo />
+        <span className="navbar__brand-text text-gradient">Sazzad Himel</span>
       </div>
 
       <div className={`navbar__menu ${isMenuOpen ? "navbar__menu--open" : ""}`}>

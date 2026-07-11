@@ -2,20 +2,15 @@ import './Footer.css';
 import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-const Footer = ({ navigate }) => {
-    const scrollToTop = () => {
-        window.scrollTo(0, 0);
-    };
-
+const Footer = ({ navigateTo }) => {
     const handleNavigation = (page) => {
-        navigate(page);
-        scrollToTop();
+        navigateTo(page);
     };
 
     return (
         <footer>
             <div className="footer">
-                <div className="brand-name footer-column" onClick={() => handleNavigation("home")}>
+                <div className="brand-name footer-column" onClick={() => handleNavigation("hero")}>
                     Sazzad Himel.
                 </div>
                 <div className="footer-column">
@@ -46,7 +41,7 @@ const Footer = ({ navigate }) => {
 };
 
 Footer.propTypes = {
-    navigate: PropTypes.func.isRequired,
+    navigateTo: PropTypes.func.isRequired,
 };
 
 export default Footer;

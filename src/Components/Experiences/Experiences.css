@@ -1,9 +1,13 @@
+/* =========================================================
+   EXPERIENCES 3D CAROUSEL STYLES
+   ========================================================= */
+
 .exp-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
 }
 
 .exp-tab {
@@ -32,29 +36,48 @@
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
 }
 
-.exp-card {
-  border-radius: 24px;
-  max-width: 900px;
-  margin: 0 auto;
+.exp-card-3d {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.exp-card-3d:not(.active):hover {
+  opacity: 0.8 !important;
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .exp-card__inner {
-  padding: 2.5rem;
+  padding: 2.2rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  height: 100%;
+  overflow-y: auto;
+  gap: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
+}
+
+.exp-card__inner::-webkit-scrollbar {
+  width: 4px;
+}
+
+.exp-card__inner::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
 }
 
 .exp-card__header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 14px;
 }
 
 .exp-card__title {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 900;
   line-height: 1.2;
 }
@@ -63,12 +86,12 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 20px;
+  padding: 7px 18px;
   border-radius: 50px;
   background: rgba(34, 211, 238, 0.1);
   border: 1px solid rgba(34, 211, 238, 0.3);
   color: var(--clr-cyan);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -81,19 +104,25 @@
 }
 
 .exp-card__desc {
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   line-height: 1.75;
   color: var(--text-color);
-  opacity: 0.9;
+  opacity: 0.95;
+  text-align: justify;
+  flex-grow: 1;
+}
+
+.exp-card__skills {
+  margin-top: auto;
 }
 
 .exp-card__skills-label {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--tertiary-color);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .exp-card__skills-grid {
@@ -105,37 +134,61 @@
 .exp-skill-chip {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 7px 14px;
+  gap: 8px;
+  padding: 6px 14px;
   border-radius: 50px;
-  background: rgba(99, 102, 241, 0.06);
-  border: 1px solid rgba(99, 102, 241, 0.18);
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid var(--card-border);
   transition: all 0.3s ease;
 }
 
 .exp-skill-chip:hover {
-  background: rgba(99, 102, 241, 0.14);
+  background: rgba(99, 102, 241, 0.12);
   border-color: var(--tertiary-color);
   transform: translateY(-2px);
 }
 
 .exp-skill-chip img {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
 }
 
 .exp-skill-chip span {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-color);
 }
 
+/* =========================================================
+   Responsive Adjustments
+   ========================================================= */
+
 @media (max-width: 768px) {
   .exp-card__inner {
     padding: 1.5rem;
+    gap: 12px;
   }
+
   .exp-card__title {
     font-size: 1.35rem;
+  }
+
+  .exp-card__desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .exp-skill-chip {
+    padding: 5px 10px;
+  }
+
+  .exp-skill-chip img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .exp-skill-chip span {
+    font-size: 0.75rem;
   }
 }

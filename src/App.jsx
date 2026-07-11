@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import About from "./Components/About/About.jsx";
 import Skills from "./Components/Skills/Skills.jsx";
@@ -10,16 +10,14 @@ import Hero from "./Components/Hero/Hero.jsx";
 import Achievements from "./Components/Achievements/Achievements.jsx";
 import CanvasBackground from "./Components/3D/CanvasBackground.jsx";
 import Preloader from "./Components/Preloader/Preloader.jsx";
-import "./Components/Preloader/Preloader.css";
 
 const SECTIONS = ["hero", "about", "skills", "experiences", "achievements", "projects", "contact"];
 
 const App = () => {
   const [loaded, setLoaded] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  const sectionRefs = useRef({});
 
-  // Intersection Observer to track active section & trigger animations
+  // Intersection Observer to track active section & trigger vertical animations
   useEffect(() => {
     if (!loaded) return;
 
@@ -38,7 +36,7 @@ const App = () => {
             }
           });
         },
-        { threshold: 0.18 }
+        { threshold: 0.15 }
       );
 
       obs.observe(el);

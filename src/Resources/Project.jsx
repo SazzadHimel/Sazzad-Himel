@@ -20,6 +20,18 @@ import NumPy from "../assets/Logos/NumPy.svg";
 
 export const projects = [
     {
+        name: "Vendor Sales Performance Analysis",
+        title: "Data Analyst (Python & SQL Project - Sep '25)",
+        description: "Analyzed 12.8M+ sales records, revealing a 72% cost reduction from bulk purchasing and a 65.7% vendor risk. Designed inventory strategies by identifying margin differences and slow-moving stock to improve profitability.",
+        link: "https://github.com/SazzadHimel/Vendor-Performance-Analysis.git",
+        skills: [
+            { name: 'Python', logo: Python },
+            { name: 'Pandas', logo: Pandas },
+            { name: 'NumPy', logo: NumPy },
+            { name: 'MySQL', logo: MySQL },
+        ]
+    },
+    {
         name: "Skill Swap",
         title: "Full-Stack Developer (React + FastAPI Project)",
         description:
@@ -39,8 +51,7 @@ export const projects = [
     {
         name: "Online Food Ordering",
         title: "Full-Stack Developer (Laravel Project)",
-        description:
-            "As the restaurant business is booming in Bangladesh, we present this ‘Online Food Ordering’ website to foster growth momentum in this sector. This website comes with a unique feature called a digital wallet, which makes the business more customer-friendly. Features like search food, display profile, cart, wishlist, etc. will give users a seamless experience while ordering their desired food items at the restaurant online. Additionally, admins can add, edit, delete users, categories, food, and add money to users' wallets, which means more convenient sales operations for their business and stable revenue. However, the website has some limitations and can be improved further with new features and a better user interface and design.",
+        description: "A full-stack food ordering platform built using Laravel with an integrated digital wallet. Features include item searching, user profiles, an interactive cart, and a wishlist. A complete admin panel manages users, menus, categories, and wallet balances.",
         link: "https://github.com/SazzadHimel/Online-Food-Ordering",
         skills: [
             { name: 'HTML', logo: Html },

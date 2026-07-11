@@ -1,24 +1,57 @@
+/* =========================================================
+   ABOUT ME SECTION REDESIGN
+   ========================================================= */
+
 .about-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
   align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
+  gap: 50px;
+  margin-bottom: 30px;
 }
 
+/* Lottie Column & Aura Glow */
 .about-lottie-col {
-  flex: 1 1 300px;
   display: flex;
   justify-content: center;
+  position: relative;
+}
+
+.about-lottie-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-lottie-aura {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(34, 211, 238, 0.08) 50%, rgba(244, 114, 182, 0) 70%);
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+  animation: pulse-glow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.1); opacity: 1; }
 }
 
 .about-lottie {
   width: 100%;
-  max-width: 360px;
+  position: relative;
+  z-index: 2;
 }
 
+/* Bio Card & Stats Dashboard */
 .about-bio-card {
-  flex: 1.4 1 420px;
+  width: 100%;
   padding: 2.5rem;
   border-radius: 24px;
 }
@@ -30,21 +63,77 @@
 }
 
 .about-intro {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.35rem;
+  font-weight: 850;
+  letter-spacing: -0.5px;
 }
 
 .about-bio {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1.02rem;
+  line-height: 1.75;
   color: var(--text-color);
   opacity: 0.9;
+  text-align: justify;
 }
 
 .about-bio strong {
   color: var(--tertiary-color);
 }
 
+/* Stats Dashboard Grid */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 10px 0;
+}
+
+.about-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.015);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.about-stat-item:hover {
+  transform: translateY(-3px);
+  background: rgba(99, 102, 241, 0.05);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.08);
+}
+
+.about-stat-icon {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-stat-number {
+  font-size: 1.05rem;
+  font-weight: 850;
+  line-height: 1.1;
+}
+
+.about-stat-label {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Tech Chips */
 .about-chips {
   display: flex;
   flex-wrap: wrap;
@@ -55,7 +144,7 @@
 .about-chip {
   padding: 6px 16px;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
 }
 
@@ -80,88 +169,47 @@
   border: 1px solid rgba(167, 139, 250, 0.25);
 }
 
-/* Club Cards */
-.about-clubs__title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: var(--text-color);
-}
+/* =========================================================
+   Responsive Adjustments
+   ========================================================= */
 
-.about-clubs__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.about-club-card {
-  padding: 2rem;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-club-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  border-radius: 20px 20px 0 0;
-}
-
-.about-club-card--indigo::before {
-  background: linear-gradient(90deg, #6366f1, #a78bfa);
-}
-.about-club-card--cyan::before {
-  background: linear-gradient(90deg, #22d3ee, #34d399);
-}
-
-.about-club-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--btn-gradient);
-  margin-bottom: 14px;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
-}
-
-.about-club-role {
-  font-weight: 800;
-  font-size: 1.05rem;
-  color: var(--text-color);
-}
-
-.about-club-dept {
-  font-size: 0.9rem;
-  color: var(--tertiary-color);
-  font-weight: 600;
-  margin: 4px 0;
-}
-
-.about-club-org {
-  font-size: 0.92rem;
-  color: var(--text-color);
-  opacity: 0.85;
-}
-
-.about-club-period {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-style: italic;
-  background: rgba(99, 102, 241, 0.06);
-  padding: 4px 12px;
-  border-radius: 50px;
+@media (max-width: 992px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  
+  .about-lottie-wrapper {
+    max-width: 320px;
+  }
 }
 
 @media (max-width: 768px) {
   .about-bio-card {
-    padding: 1.5rem;
+    padding: 1.75rem;
   }
-  .about-layout {
-    flex-direction: column;
+  
+  .about-intro {
+    font-size: 1.2rem;
+  }
+  
+  .about-bio {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-stat-item {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-bio-card {
+    padding: 1.2rem;
   }
 }

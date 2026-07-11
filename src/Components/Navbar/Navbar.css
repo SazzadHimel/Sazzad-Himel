@@ -30,23 +30,49 @@
 .navbar__brand {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   cursor: pointer;
   flex-shrink: 0;
 }
 
 .navbar__brand-text {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
+  transition: transform 0.3s ease;
 }
 
-.navbar__brand-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--clr-cyan);
-  box-shadow: 0 0 10px var(--clr-cyan);
+.navbar__brand:hover .navbar__brand-text {
+  transform: scale(1.02);
+}
+
+.navbar__logo-svg {
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.35));
+}
+
+.navbar__brand:hover .navbar__logo-svg {
+  transform: scale(1.08) rotate(5deg);
+}
+
+.logo-orbit-outer {
+  transform-origin: 50px 50px;
+  animation: spin-orbit 14s linear infinite;
+}
+
+.logo-orbit-inner {
+  transform-origin: 50px 50px;
+  animation: spin-orbit-reverse 9s linear infinite;
+}
+
+@keyframes spin-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-orbit-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
 
 /* Menu */
@@ -243,6 +269,6 @@
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 10px 20px;
+    padding: 10px 16px;
   }
 }

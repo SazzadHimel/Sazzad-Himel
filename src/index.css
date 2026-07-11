@@ -101,7 +101,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--clr-indigo), var(--clr-cyan), var(--clr-pink));
+  background: var(--btn-gradient);
   border-radius: 8px;
   border: 2px solid var(--primary-color);
 }
@@ -112,30 +112,115 @@ a {
 }
 
 /* ============================================================
-   SECTION 3D SCROLL TRANSITIONS
+   SECTION VERTICAL ANIMATIONS
    ============================================================ */
 .page-section {
   min-height: 100vh;
   position: relative;
-  /* Initial hidden state */
   opacity: 0;
-  transform: perspective(1200px) rotateX(12deg) translateY(60px) scale(0.96);
+  transform: perspective(1200px) rotateX(8deg) translateY(40px) scale(0.98);
   transition:
     opacity 0.75s cubic-bezier(0.25, 1, 0.5, 1),
     transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
   transform-origin: center bottom;
 }
 
-/* First section (hero) always visible */
 #hero {
   opacity: 1;
   transform: none;
 }
 
-/* When section scrolls into view */
 .page-section.section--in-view {
   opacity: 1;
   transform: perspective(1200px) rotateX(0deg) translateY(0px) scale(1);
+}
+
+/* ============================================================
+   3D CARD CAROUSEL SYSTEM (INTERNAL SECTIONS)
+   ============================================================ */
+.carousel-3d-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 520px; /* Tall enough to house card contents */
+  margin: 30px auto 0;
+  perspective: 1500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.carousel-3d-card {
+  position: absolute;
+  width: 100%;
+  max-width: 620px;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1), 
+              opacity 0.8s ease, 
+              visibility 0.8s;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Floating controls inside 3D sections */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 25;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.carousel-nav-btn:hover {
+  background: var(--btn-gradient);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+.carousel-nav-btn--left {
+  left: -65px;
+}
+
+.carousel-nav-btn--right {
+  right: -65px;
+}
+
+@media (max-width: 1100px) {
+  .carousel-nav-btn--left { left: 10px; }
+  .carousel-nav-btn--right { right: 10px; }
+}
+
+@media (max-width: 768px) {
+  .carousel-3d-container {
+    height: 580px; /* Slightly taller for small screen wraps */
+  }
+  .carousel-3d-card {
+    max-width: 90%;
+  }
+  .carousel-nav-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.4rem;
+  }
 }
 
 /* Container */
@@ -305,5 +390,13 @@ a {
 
   .section-heading h2 {
     font-size: 1.75rem;
+  }
+
+  .carousel-3d-container {
+    height: 600px;
+  }
+
+  .carousel-3d-card {
+    max-width: 95%;
   }
 }

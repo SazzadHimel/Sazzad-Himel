@@ -21,6 +21,8 @@ import NumPy from "../assets/Logos/NumPy.svg";
 import C from "../assets/Logos/C.svg";
 import AdobeIllustrator from "../assets/Logos/Adobe Illustrator.svg";
 import TailwindCSS from "../assets/Logos/Tailwind CSS.svg";
+import Git from "../assets/Logos/Git.svg";
+import Canva from "../assets/Logos/Canva.svg";
 
 export const skills = [
     { name: "HTML5", logo: Html, desc: "Markup language for creating web content." },
@@ -43,4 +45,6 @@ export const skills = [
     { name: "C", logo: C, desc: "A programming language used for system/software development." },
     { name: "Adobe Illustrator", logo: AdobeIllustrator, desc: "A vector graphics editor used for creating logos, illustrations, and complex artworks." },
     { name: "Tailwind CSS", logo: TailwindCSS, desc: "A utility-first CSS framework for rapidly building modern and responsive user interfaces." },
+    { name: "Git", logo: Git, desc: "Distributed version control system to track source code changes." },
+    { name: "Canva", logo: Canva, desc: "Graphic design platform used to create social media graphics and presentations." },
 ];

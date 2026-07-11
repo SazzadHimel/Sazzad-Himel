@@ -6,22 +6,25 @@ import Python from "../assets/Logos/Python.svg";
 import MySQL from "../assets/Logos/MySQL.svg";
 import React from "../assets/Logos/React.svg";
 import JavaScript from "../assets/Logos/JavaScript.svg";
-import MongoDB from "../assets/Logos/MongoDB.svg";
-import ExpressJs from "../assets/Logos/Express.svg";
-import NodeJs from "../assets/Logos/Node.Js.svg";
-import Php from "../assets/Logos/PHP.svg";
-import Laravel from "../assets/Logos/Laravel.svg";
-import Bootstrap from "../assets/Logos/Bootstrap.svg";
-import TailwindCSS from "../assets/Logos/Tailwind CSS.svg";
-import OpenGL from "../assets/Logos/OpenGL.svg";
 import Pandas from "../assets/Logos/Pandas.svg";
 
 export const experience = [
     {
-        name: "IBC - 2025",
-        title: "Static Website",
-        description: "Worked on developing a conference website of BRAC University which is the International Biotechnology Conference 2025, a premier event that will bring together leading experts, researchers, and innovators from around the globe to explore the cutting-edge developments in the rapidly advancing field of biotechnology.",
-        link: "https://ibc.bracu.ac.bd/",
+        name: "Foodi Express Limited",
+        title: "Executive - Commercial, Content Data Analysis & Management (Nov '25 - Present)",
+        description: "Analyzed and managed data of 20,000+ unique SKU's, including competitor's price and margin mapping to support data-driven commercial decisions. Identified top-performing SKU's from competitor data containing 29,000+ SKU's and generated insights for sales strategy, product assortment, and inventory planning. Automated manual workflows, and contributed in requirement analysis for inventory management to improve operational efficiency through data-driven problem solving.",
+        link: "https://us-bangla.com/",
+        skills: [
+            { name: 'Python', logo: Python },
+            { name: 'Pandas', logo: Pandas },
+            { name: 'MySQL', logo: MySQL },
+        ]
+    },
+    {
+        name: "SHUJAN",
+        title: "Web Design & Developer (Dec '24 - Jun '25)",
+        description: "Designed, developed, and maintained a responsive web platform for SHUJAN (Citizens for Good Governance), an election monitoring organization. Developed a dynamic blog management system with content creation, editing, categorization, and search functionality. Built a secure admin panel for managing publications, election documents, achievements, and organizational content.",
+        link: "https://shujan.netlify.app/",
         skills: [
             { name: 'React', logo: React },
             { name: 'HTML', logo: Html },
@@ -30,14 +33,15 @@ export const experience = [
         ]
     },
     {
-        name: "BUReD Club",
-        title: "Static Websiter",
-        description: "This website is a dedicated project for the BRAC University Research for Development Club. As a volunteer effort for the club, I have employed HTML, CSS, and JavaScript to create an engaging and functional digital presence. This platform showcases the club's commitment to fostering research and development initiatives within the university community.",
-        link: "https://bracu-research-for-development-club-y.netlify.app/",
+        name: "IBC - 2025",
+        title: "Static Website Developer",
+        description: "Worked on developing a conference website of BRAC University which is the International Biotechnology Conference 2025, a premier event that will bring together leading experts, researchers, and innovators from around the globe to explore the cutting-edge developments in the rapidly advancing field of biotechnology.",
+        link: "https://ibc.bracu.ac.bd/",
         skills: [
+            { name: 'React', logo: React },
             { name: 'HTML', logo: Html },
             { name: 'CSS', logo: CSS },
             { name: 'JavaScript', logo: JavaScript },
         ]
-    },
+    }
 ];

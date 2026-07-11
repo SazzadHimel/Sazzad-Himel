@@ -13,34 +13,75 @@ const About = () => {
       </div>
 
       <div className="about-layout">
+        {/* Left Column: Lottie Animation with glowing frame */}
         <div className="about-lottie-col">
-          <Lottie animationData={Animation} className="about-lottie" />
+          <div className="about-lottie-wrapper">
+            <div className="about-lottie-aura" />
+            <Lottie animationData={Animation} className="about-lottie" />
+          </div>
         </div>
 
-        <Tilt3D className="glass-panel about-bio-card" max={6} scale={1.01} glare>
-          <div className="about-bio-inner">
-            <p className="about-intro">
-              Hello! I'm <span className="text-gradient">Sazzad Himel</span>.
-            </p>
-            <p className="about-bio">
-              Developer with practical experience in{" "}
-              <strong>AI, Machine Learning, Deep Learning, and full-stack development</strong>{" "}
-              using <strong>MERN, Laravel and FastAPI</strong> frameworks. Applied data-driven
-              methods and back-end integration to build scalable web applications and AI-based
-              tools. Interested in solving real-world challenges through automation, predictive
-              modeling, and robust system design.
-            </p>
+        {/* Right Column: Bio Deck & Stats Dashboard */}
+        <div className="about-bio-col">
+          <Tilt3D className="glass-panel about-bio-card" max={5} scale={1.01} glare>
+            <div className="about-bio-inner">
+              <p className="about-intro">
+                Hello! I'm <span className="text-gradient">Sazzad Himel</span>.
+              </p>
 
-            <div className="about-chips">
-              <span className="about-chip about-chip--indigo">🚀 Full-Stack</span>
-              <span className="about-chip about-chip--cyan">🤖 AI & ML</span>
-              <span className="about-chip about-chip--pink">🐍 Python</span>
-              <span className="about-chip about-chip--violet">⚡ MERN</span>
+              <p className="about-bio">
+                Passionate about <strong>Data Analysis</strong> with a strong interest in <strong>AI, Machine Learning, and Deep Learning. </strong>
+                Skilled in developing data-driven solutions, predictive models, and scalable applications using modern technologies
+                such as <strong>FastAPI</strong> and <strong>full-stack development frameworks</strong>. Enthusiastic about extracting insights from data
+                and applying AI techniques to solve <strong>real-world problems</strong>.
+              </p>
+
+              {/* Statistics Counter Grid */}
+              <div className="about-stats-grid">
+                <div className="about-stat-item">
+                  <div className="about-stat-icon">💻</div>
+                  <div className="about-stat-info">
+                    <h4 className="about-stat-number text-gradient">2+ Years</h4>
+                    <p className="about-stat-label">Coding Practice</p>
+                  </div>
+                </div>
+
+                <div className="about-stat-item">
+                  <div className="about-stat-icon">🚀</div>
+                  <div className="about-stat-info">
+                    <h4 className="about-stat-number text-gradient">15+ Completed</h4>
+                    <p className="about-stat-label">Projects Managed</p>
+                  </div>
+                </div>
+
+                <div className="about-stat-item">
+                  <div className="about-stat-icon">🏆</div>
+                  <div className="about-stat-info">
+                    <h4 className="about-stat-number text-gradient">5+ Professional</h4>
+                    <p className="about-stat-label">Certifications</p>
+                  </div>
+                </div>
+
+                <div className="about-stat-item">
+                  <div className="about-stat-icon">⚡</div>
+                  <div className="about-stat-info">
+                    <h4 className="about-stat-number text-gradient">3+ frameworks</h4>
+                    <p className="about-stat-label">FastAPI, MERN, Laravel</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tech Chips */}
+              <div className="about-chips">
+                <span className="about-chip about-chip--indigo">🚀 Full-Stack</span>
+                <span className="about-chip about-chip--cyan">🤖 AI & ML</span>
+                <span className="about-chip about-chip--pink">🐍 Python</span>
+                <span className="about-chip about-chip--violet">⚡ FastAPI</span>
+              </div>
             </div>
-          </div>
-        </Tilt3D>
+          </Tilt3D>
+        </div>
       </div>
-
     </div>
   );
 };
