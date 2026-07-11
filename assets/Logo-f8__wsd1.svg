@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+    <filter id="shadowFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#6366f1" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Background Circle Badge -->
+  <rect width="512" height="512" rx="140" fill="#070913"/>
+  <!-- Decorative Glowing Ring -->
+  <circle cx="256" cy="256" r="210" stroke="url(#glowGrad)" stroke-width="16" stroke-dasharray="800 300" fill="none" transform="rotate(45 256 256)" filter="url(#shadowFilter)"/>
+  <circle cx="256" cy="256" r="170" stroke="url(#glowGrad)" stroke-width="8" stroke-dasharray="500 200" fill="none" opacity="0.6" transform="rotate(-45 256 256)"/>
+  
+  <!-- Stylized initials S H -->
+  <!-- Stylized 'S' path -->
+  <path d="M 190,180 C 190,180 236,155 256,190 C 271,216 220,240 220,270 C 220,300 270,325 270,325" 
+        stroke="url(#glowGrad)" stroke-width="24" stroke-linecap="round" fill="none" filter="url(#shadowFilter)"/>
+  <!-- Stylized 'H' path -->
+  <path d="M 320,180 L 320,325 M 265,252 L 355,252" 
+        stroke="url(#glowGrad)" stroke-width="24" stroke-linecap="round" fill="none" filter="url(#shadowFilter)"/>
+</svg>
