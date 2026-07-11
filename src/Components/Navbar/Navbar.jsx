@@ -34,51 +34,57 @@ const Navbar = ({ activeSection, navigateTo }) => {
   };
 
   return (
-    <nav className="navbar navbar--scrolled">
-      <div className="navbar__brand" onClick={() => handleNav("hero")}>
-        <Logo />
-        <span className="navbar__brand-text text-gradient">Sazzad Himel</span>
-      </div>
+    <>
+      <div
+        className={`navbar__overlay ${isMenuOpen ? "navbar__overlay--open" : ""}`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+      <nav className="navbar navbar--scrolled">
+        <div className="navbar__brand" onClick={() => handleNav("hero")}>
+          <Logo className="navbar__logo" />
+          <span className="navbar__brand-text text-gradient">Sazzad Himel</span>
+        </div>
 
-      <div className={`navbar__menu ${isMenuOpen ? "navbar__menu--open" : ""}`}>
-        <ul>
-          {NAV_LINKS.map(({ id, label }) => (
-            <li key={id}>
-              <button
-                className={`navbar__link ${activeSection === id ? "navbar__link--active" : ""}`}
-                onClick={() => handleNav(id)}
-              >
-                {label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <div className={`navbar__menu ${isMenuOpen ? "navbar__menu--open" : ""}`}>
+          <ul>
+            {NAV_LINKS.map(({ id, label }) => (
+              <li key={id}>
+                <button
+                  className={`navbar__link ${activeSection === id ? "navbar__link--active" : ""}`}
+                  onClick={() => handleNav(id)}
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <div className="navbar__right">
-        <button
-          className="navbar__theme-btn"
-          onClick={() => setDarkMode(!darkMode)}
-          aria-label="Toggle dark mode"
-        >
-          <span className="navbar__theme-track">
-            <span className={`navbar__theme-thumb ${darkMode ? "navbar__theme-thumb--dark" : ""}`}>
-              {darkMode ? "🌞" : "🌙"}
+        <div className="navbar__right">
+          <button
+            className="navbar__theme-btn"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle dark mode"
+          >
+            <span className="navbar__theme-track">
+              <span className={`navbar__theme-thumb ${darkMode ? "navbar__theme-thumb--dark" : ""}`}>
+                {darkMode ? "🌞" : "🌙"}
+              </span>
             </span>
-          </span>
-        </button>
+          </button>
 
-        <button
-          className={`navbar__hamburger ${isMenuOpen ? "navbar__hamburger--open" : ""}`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
-    </nav>
+          <button
+            className={`navbar__hamburger ${isMenuOpen ? "navbar__hamburger--open" : ""}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </nav>
+    </>
   );
 };
 
