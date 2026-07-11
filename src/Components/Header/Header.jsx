@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import "./Header.css";
-import headerImage from "../../assets/SazzadHimel.jpg";
+import headerImage from "../../assets/Sazzad-Himel.png";
 import resumePDF from "../../Documents/SazzadHimel_CV.pdf";
 import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { HiOutlineDocumentText } from 'react-icons/hi';

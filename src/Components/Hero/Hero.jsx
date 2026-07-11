@@ -1,18 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import "./Hero.css";
-import heroImage from "../../assets/SazzadHimel.jpg";
 import resumePDF from "../../Documents/SazzadHimel_CV.pdf";
 import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import Tilt3D from "../3D/Tilt3D.jsx";
 import PropTypes from "prop-types";
+import heroImage from "../../assets/Sazzad-Himel.png";
 
 const TYPING_STRINGS = [
+  "Data Analyst",
   "Full-Stack Developer",
-  "MERN Stack Engineer",
-  "Data Science & AI",
   "Machine Learning Expert",
-  "FastAPI Developer",
+  "Data Science & AI",
 ];
 
 const Hero = ({ navigateTo }) => {
@@ -56,21 +55,14 @@ const Hero = ({ navigateTo }) => {
 
   return (
     <div className={`hero-wrapper container ${visible ? "hero--visible" : ""}`}>
-      {/* Floating decorative blobs */}
-      <div className="hero-blob hero-blob--1" />
-      <div className="hero-blob hero-blob--2" />
-      <div className="hero-blob hero-blob--3" />
 
       {/* Left: Image */}
       <div className="hero-left">
         <Tilt3D max={14} scale={1.05} glare={true} className="hero-img-tilt">
-          <div className="hero-img-glow">
+          <div>
             <div className="hero-img-ring hero-img-ring--1" />
             <div className="hero-img-ring hero-img-ring--2" />
-            {/* <img src={heroImage} alt="Sazzad Himel" className="hero-img" /> */}
-            <div className="glass-panel" style={{ backgroundColor: '#fff', borderRadius: '16px' }}>
-
-            </div>
+            <img src={heroImage} alt="Sazzad Himel" className="hero-img" />
           </div>
         </Tilt3D>
       </div>
@@ -90,17 +82,18 @@ const Hero = ({ navigateTo }) => {
         </div>
 
         <p className="hero-bio">
-          Developer with practical experience in <strong>AI, Machine Learning, Deep Learning,
-            and full-stack development</strong> using <strong>MERN, Laravel and FastAPI</strong>.
-          Building scalable apps and AI-driven tools to solve real-world challenges.
+          Passionate about <strong>Data Analysis</strong> with a strong interest in <strong>AI, Machine Learning, and Deep Learning. </strong>
+          Skilled in developing data-driven solutions, predictive models, and scalable applications using modern technologies
+          such as <strong>FastAPI</strong> and <strong>full-stack development frameworks</strong>. Enthusiastic about extracting insights from data
+          and applying AI techniques to solve <strong>real-world problems</strong>.
         </p>
 
         <div className="hero-tags">
+          <span className="tag-badge">🎨 Data Analytics</span>
           <span className="tag-badge">🤖 AI & ML</span>
-          <span className="tag-badge">⚡ MERN Stack</span>
           <span className="tag-badge">🐍 Python</span>
           <span className="tag-badge">🚀 FastAPI</span>
-          <span className="tag-badge">🎨 Laravel</span>
+          <span className="tag-badge">⚡ MERN Stack</span>
         </div>
 
         <div className="hero-actions">

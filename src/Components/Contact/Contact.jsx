@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import profileImg from '../../assets/SazzadHimel.jpg';
 import './Contact.css';
 import Tilt3D from '../3D/Tilt3D.jsx';
 

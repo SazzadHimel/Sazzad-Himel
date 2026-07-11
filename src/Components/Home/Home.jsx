@@ -2,7 +2,7 @@ import Header from '../Header/Header.jsx';
 import Animation from "../../Animation.json";
 import Lottie from "lottie-react";
 import './Home.css';
-import '../About/About.css'; // Load shared About styles
+import '../About/About.css';
 import PropTypes from "prop-types";
 import Tilt3D from "../3D/Tilt3D.jsx";
 
